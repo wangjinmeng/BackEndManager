@@ -19,6 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/_bootstrap@3.3.7@bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/_admin-lte@2.3.11@admin-lte/dist/css/AdminLTE.css",
+        "../node_modules/_admin-lte@2.3.11@admin-lte/dist/css/skins/skin-blue.min.css",
         "styles.css"
       ],
       "scripts": [],
