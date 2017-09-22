@@ -1,6 +1,9 @@
-<div class="wrapper" style="height: auto; min-height: 100%;">
-  <app-header></app-header>
-  <app-aside></app-aside>
-  <div class="content-wrapper" style="min-height: 844px;"></div>
-  <app-footer></app-footer>
+<div  class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;" [class.sidebar-collapse]="sideBarStatus">
+  <div class="wrapper" style="height: auto;min-height: 100%;">
+    <app-header (changeSideStatus)="changeSide()"></app-header>
+    <app-aside></app-aside>
+    <div class="content-wrapper" [ngStyle]="{'min-height':currentHeight+'px'}"></div>
+    <app-footer></app-footer>
+  </div>
 </div>
+
