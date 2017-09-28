@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+ul,ol{
+  list-style: none;
+}
 @import "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 body{
   min-width: 320px;
