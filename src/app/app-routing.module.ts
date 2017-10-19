@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule,Routes} from "@angular/router";
-import {TestComponent} from "./test/test.component";
 import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 import {IconComponent} from "./ui-element/icon/icon.component";
+import {UserGuideComponent} from "./user-guide/user-guide.component";
+import {GeneralComponent} from "./ui-element/general/general.component";
+import {TestComponent} from "./test/test.component";
 const appRoutes:Routes=[
-  {path:'test',component:TestComponent},
   {path:'ui-element/icon',component:IconComponent},
-  // {path:'',redirectTo:'/ui-element/icon',pathMatch:'full'},
+  {path:'ui-element/general',component:GeneralComponent},
+  {path:'user-guide',component:UserGuideComponent},
+  {path:'test',component:TestComponent},
+  {path:'',redirectTo:'user-guide',pathMatch:'full'},
   {path:'**',component:CannotFoundComponent},
 ];
 @NgModule({
