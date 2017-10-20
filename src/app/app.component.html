@@ -1,12 +1,1 @@
-<div  class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;" [class.sidebar-collapse]="sideBarStatus">
-  <div class="wrapper" style="height: auto;min-height: 100%;">
-    <app-header (changeSideStatus)="changeSide()"></app-header>
-    <app-aside></app-aside>
-    <div class="content-wrapper" [ngStyle]="{'min-height':currentHeight+'px'}">
-      <p  *myUnless="true">hello </p>
-      <router-outlet></router-outlet>
-    </div>
-    <app-footer></app-footer>
-  </div>
-</div>
-
+<router-outlet></router-outlet>
