@@ -1,13 +1,16 @@
-import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnChanges, Output, EventEmitter, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-pagebar',
   templateUrl: './pagebar.component.html',
   styleUrls: ['./pagebar.component.css']
 })
-export class PagebarComponent implements OnChanges {
-  @Input() curPage:number;
-  @Input() totalPage:number;
+export class PagebarComponent implements OnChanges,OnInit {
+  ngOnInit(): void {
+    this.ngOnChanges()
+  }
+  @Input() curPage:number=1;
+  @Input() totalPage:number=1;
   @Output() changePage=new EventEmitter();
   //一共用三种模式：
   //1:12345;1234;123;12;1;
@@ -20,9 +23,8 @@ export class PagebarComponent implements OnChanges {
     console.log(this.curPage);
     console.log(this.totalPage);
   }
+
   ngOnChanges(): void {
-    console.log(this.curPage);
-    console.log(this.totalPage);
     this.pageArr=[];
     if(this.totalPage<=this.maxLen){
       for(let i=0;i<this.totalPage;i++){

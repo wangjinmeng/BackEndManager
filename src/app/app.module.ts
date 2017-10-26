@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 import {LoginModule} from "./login/login.module";
-import {MainModule} from "./main/main.module";
 import {IndexModule} from "./index/index.module";
 @NgModule({
   declarations: [
@@ -21,5 +20,4 @@ import {IndexModule} from "./index/index.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
