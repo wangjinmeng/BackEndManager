@@ -3,16 +3,17 @@
  */
 import {Injectable} from "@angular/core";
 import {CanActivate, Router} from "@angular/router";
-import {LoginService} from "../login/service/login/login.service";
+import {LoginService} from "../core/service/login/login.service";
 @Injectable()
 export class IndexGuard implements CanActivate{
   constructor(private loginService:LoginService,private router:Router){}
   canActivate(){
-    if(this.loginService.getCurrentState()){
-      return true;
-    }else{
-      this.router.navigate(['/login']);
-      return false
-    }
+    return true;
+    // if(this.loginService.getCurrentState()){
+    //   return true;
+    // }else{
+    //   this.router.navigate(['/login']);
+    //   return false
+    // }
   }
 }

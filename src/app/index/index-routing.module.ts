@@ -3,12 +3,18 @@ import { Routes,  RouterModule } from '@angular/router';
 import {IndexComponent} from "./index/index.component";
 import {IndexGuard} from "../guard/index.guard";
 import {WidgetBoxComponent} from "./widget-box/widget-box.component";
+import {IndexResolveService} from "../guard/index-resolve/index-resolve.service";
+import {IndexUiGeneralComponent} from "./index-ui-general/index-ui-general.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
     canActivate:[IndexGuard],
+    resolve:{
+      userInfo:IndexResolveService
+    },
     children:[
-      {path:'',component:WidgetBoxComponent}
+      {path:'',component:WidgetBoxComponent},
+      {path:'ui/general',component:IndexUiGeneralComponent},
     ]
   }
 ];

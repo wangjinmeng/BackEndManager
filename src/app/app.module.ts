@@ -6,6 +6,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 import {LoginModule} from "./login/login.module";
 import {IndexModule} from "./index/index.module";
+import {CoreModule} from "./core/core.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,6 +14,7 @@ import {IndexModule} from "./index/index.module";
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     LoginModule,
     IndexModule,
     AppRoutingModule

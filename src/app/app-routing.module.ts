@@ -3,7 +3,7 @@ import {RouterModule,Routes} from "@angular/router";
 import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 const appRoutes:Routes=[
   {path:'login',loadChildren: 'app/login/login.module#LoginModule'  },
-  {path:'index', loadChildren: 'app/index/index.module#IndexModule' },
+  {path:'index/:id', loadChildren: 'app/index/index.module#IndexModule' },
   {path: '', redirectTo:'index',pathMatch:'full'},
   {path:'**',component:CannotFoundComponent}
 ];
