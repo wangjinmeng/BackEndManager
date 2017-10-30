@@ -1,0 +1,6 @@
+<div [ngClass]="containerClass">
+  <div [ngClass]="barClass" role="progressbar" aria-valuemax="100" [attr.aria-valuenow]="valueCur" [style.width.%]="valueCur">
+    <span *ngIf="!showText" class="sr-only">{{valueCur}}% Complete</span>
+    <ng-container  *ngIf="showText">{{valueCur}}%</ng-container>
+  </div>
+</div>

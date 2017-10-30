@@ -1,0 +1,13 @@
+<div class="dataTables_paginate paging_simple_numbers">
+  <ul class="pagination">
+    <li class="paginate_button previous" [class.disabled]="curPage==1">
+      <a  href="javascript:" (click)="choseItem(curPage-1)">&laquo;</a>
+    </li>
+    <li class="paginate_button " *ngFor="let item of pageArr" [class.active]="item==curPage">
+      <a  href="javascript:" (click)="choseItem(item)">{{item}}</a>
+    </li>
+    <li class="paginate_button next"  [class.disabled]="curPage==totalPage">
+      <a href="javascript:" (click)="choseItem(curPage+1)">&raquo;</a>
+    </li>
+  </ul>
+</div>
