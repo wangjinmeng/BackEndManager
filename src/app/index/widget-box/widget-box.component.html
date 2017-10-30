@@ -1,0 +1,92 @@
+<section class="content-header">
+  <h1>
+    小部件
+  </h1>
+  <ol class="breadcrumb">
+    <li><a><i class="fa fa-dashboard"></i> 首页</a></li>
+    <li class="active">小部件</li>
+  </ol>
+</section>
+<section class="content container-fluid">
+  <share-box>
+    <ng-container name="title">盒子</ng-container>
+    <ng-container name="body">
+      <div class="row">
+        <div class="col-xs-2">
+          <share-box [styleSolid]="true">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">primary</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleSolid]="true" [styleTheme]="1">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">success</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleSolid]="true" [styleTheme]="2">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">warning</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleSolid]="true" [styleTheme]="3">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">danger</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleSolid]="true" [styleTheme]="4">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">danger</ng-container>
+          </share-box>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <share-box >
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">primary</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box  [styleTheme]="1">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">success</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box  [styleTheme]="2">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">warning</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleTheme]="3">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">danger</ng-container>
+          </share-box>
+        </div>
+        <div class="col-xs-2">
+          <share-box [styleTheme]="4">
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">danger</ng-container>
+          </share-box>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+          <share-box [styleSolid]="true" [styleTheme]="2" [toolRemove]="true" >
+            <ng-container name="title">标题</ng-container>
+            <ng-container name="body">danger</ng-container>
+            <ng-container name="body"><div>danger</div></ng-container>
+            <div  name="body">div</div>
+            <span  name="body">span</span>
+          </share-box>
+        </div>
+      </div>
+    </ng-container>
+  </share-box>
+</section>

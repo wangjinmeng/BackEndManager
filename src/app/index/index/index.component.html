@@ -1,0 +1,23 @@
+<div class="skin-blue sidebar-mini" [class.sidebar-collapse]="sidebarCollapse" style="height: auto; min-height: 100%;">
+  <div class="wrapper" style="height: auto; min-height: 100%;">
+    <!-- Main Header -->
+    <app-index-header (toggleNavStateEvent)="changeSidebarCollapseState()" [userImg]="userImg" [userName]="userName"></app-index-header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <app-index-sidebar></app-index-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 884px;">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <app-index-footer>
+      <ng-container name="copyright">
+        <strong>Copyright © 2016 <a href="#">Company</a>.</strong>All rights reserved.
+      </ng-container>
+      <ng-container name="custom">
+        定制化内容
+      </ng-container>
+    </app-index-footer>
+  </div>
+  <!-- ./wrapper -->
+</div>

@@ -1,0 +1,119 @@
+<section class="content-header">
+  <h1>
+    小部件
+  </h1>
+  <ol class="breadcrumb">
+    <li><a><i class="fa fa-dashboard"></i> 首页</a></li>
+    <li class="active"><i class="fa fa-cubes"></i>组件库</li>
+    <li class="active"><i class="fa fa-circle-o"></i>组件库</li>
+  </ol>
+</section>
+<section class="content">
+  <share-box [toolCollapse]="false" [styleTheme]="1" >
+    <ng-container name="body">
+      <h4>
+        盒子容器组件 <span class="text-aqua">share-box</span> 使用方法
+      </h4>
+      <pre>
+        &lt;share-box [toolCollapse]=&quot;false&quot; [styleTheme]=&quot;1&quot; &gt;
+        &lt;ng-container name=&quot;body&quot;&gt;
+          &lt;h4&gt;
+            盒子容器组件 &lt;span class=&quot;text-aqua&quot;&gt;share-box&lt;/span&gt; 使用方法
+            这里是主体部分，可以包含dom结构
+          &lt;/h4&gt;
+          &lt;pre&gt;
+
+          &lt;/pre&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-container name=&quot;title&quot;&gt; 这里是主体部分，可以包含dom结构&lt;/ng-container&gt;
+        &lt;/share-box&gt;
+      </pre>
+    </ng-container>
+    <ng-container name="title"> 前言</ng-container>
+  </share-box>
+  <h2 class="page-header" name="body">警告 and 公告</h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <share-box [toolCollapse]="false">
+          <ng-container name="title">
+            <i class="fa fa-warning"></i> 警告
+          </ng-container>
+          <ng-container name="body">
+            <share-alert [styleTheme]="'danger'" [toolClose]="false">
+              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
+              <ng-container name="body">
+                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+              </ng-container>
+            </share-alert>
+            <share-alert [styleTheme]="'info'" [toolClose]="false">
+              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
+              <ng-container name="body">
+                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+              </ng-container>
+            </share-alert>
+            <share-alert [styleTheme]="'warning'" [toolClose]="false">
+              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
+              <ng-container name="body">
+                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+              </ng-container>
+            </share-alert>
+            <share-alert [styleTheme]="'success'" [toolClose]="true">
+              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
+              <ng-container name="body">
+                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+              </ng-container>
+            </share-alert>
+          </ng-container>
+      </share-box>
+    </div>
+    <div class="col-xs-6">
+      <share-box [toolCollapse]="false">
+        <ng-container name="title">
+          <i class="fa fa-warning"></i>callout
+        </ng-container>
+        <ng-container name="body">
+          <share-callout [styleTheme]="'danger'">
+            <ng-container name="title">
+              I am a danger callout!
+            </ng-container>
+            <ng-container name="body">
+              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+            </ng-container>
+          </share-callout>
+          <share-callout [styleTheme]="'info'">
+            <ng-container name="title">
+              I am a danger callout!
+            </ng-container>
+            <ng-container name="body">
+              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+            </ng-container>
+          </share-callout>
+          <share-callout [styleTheme]="'warning'">
+            <ng-container name="title">
+              I am a danger callout!
+            </ng-container>
+            <ng-container name="body">
+              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+            </ng-container>
+          </share-callout>
+          <share-callout [styleTheme]="'success'">
+            <ng-container name="title">
+              I am a danger callout!
+            </ng-container>
+            <ng-container name="body">
+              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+            </ng-container>
+          </share-callout>
+        </ng-container>
+        <ng-container name="body">
+          share-callout组件使用指南
+          <p>该组件使用了内容投影，其中只要是 元素最外层容器的name属性等于'title',该元素及其所有后代元素都会投影到 标题部分。</p>
+          <p>同理 包含name='body'元素及其所有后代元素都会投影到 主体部分</p>
+          <p>可配置变量，styleTheme</p>
+          <p>可选值有：'danger'，'info'，'warning'，'success'</p>
+        </ng-container>
+      </share-box>
+    </div>
+  </div>
+
+</section>

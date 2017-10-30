@@ -1,0 +1,5 @@
+<div [ngClass]="styleClass">
+  <button *ngIf="toolClose" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <h4><ng-content select="[name=title]"> </ng-content></h4>
+  <ng-content select="[name=body]"> </ng-content>
+</div>
