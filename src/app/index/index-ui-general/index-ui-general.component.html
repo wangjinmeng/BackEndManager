@@ -9,111 +9,404 @@
   </ol>
 </section>
 <section class="content">
-  <share-box [toolCollapse]="false" [styleTheme]="1" >
-    <ng-container name="body">
-      <h4>
-        盒子容器组件 <span class="text-aqua">share-box</span> 使用方法
-      </h4>
-      <pre>
-        &lt;share-box [toolCollapse]=&quot;false&quot; [styleTheme]=&quot;1&quot; &gt;
-        &lt;ng-container name=&quot;body&quot;&gt;
-          &lt;h4&gt;
-            盒子容器组件 &lt;span class=&quot;text-aqua&quot;&gt;share-box&lt;/span&gt; 使用方法
-            这里是主体部分，可以包含dom结构
-          &lt;/h4&gt;
-          &lt;pre&gt;
-
-          &lt;/pre&gt;
-        &lt;/ng-container&gt;
-        &lt;ng-container name=&quot;title&quot;&gt; 这里是主体部分，可以包含dom结构&lt;/ng-container&gt;
-        &lt;/share-box&gt;
+    <h3>盒子组件</h3>
+    <share-box [styleSolid]="true">
+      <ng-container name="title">
+        share-box
+      </ng-container>
+      <ng-container name="body">
+        <h4>名称: <span>share-box</span></h4>
+        <h4>可配置参数: <span> loading、toolCollapse、toolRemove、styleSolid、styleCollapsed、styleTheme</span></h4>
+        <h4>可监听事件：eventCollapse和eventRemove</h4>
+        <h4>内容投影：name="body",name="title"</h4>
+        <h4>使用方法:</h4>
+        <pre>
+&lt;share-box
+  [loading]=&quot;true&quot;
+  [toolCollapse]=&quot;true&quot;
+  [toolRemove]=&quot;true&quot;
+  [styleSolid]=&quot;true&quot;
+  [styleCollapsed]=&quot;false&quot;
+  [styleTheme]=&quot;4&quot;
+  (eventCollapse)=&quot;eventCollapse()&quot;
+  (eventRemove)=&quot;eventRemove()&quot;&gt;
+&lt;ng-container name=&quot;title&quot;&gt;此处是标题&lt;/ng-container&gt;
+&lt;ng-container name=&quot;body&quot;&gt;此处是内容主体部分&lt;/ng-container&gt;
+&lt;/share-box&gt;
       </pre>
-    </ng-container>
-    <ng-container name="title"> 前言</ng-container>
-  </share-box>
-  <h2 class="page-header" name="body">警告 and 公告</h2>
-  <div class="row">
-    <div class="col-xs-6">
-      <share-box [toolCollapse]="false">
+        <share-box [styleSolid]="true" [styleTheme]="2" >
           <ng-container name="title">
-            <i class="fa fa-warning"></i> 警告
+            示例
           </ng-container>
           <ng-container name="body">
-            <share-alert [styleTheme]="'danger'" [toolClose]="false">
-              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
-              <ng-container name="body">
-                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-              </ng-container>
-            </share-alert>
-            <share-alert [styleTheme]="'info'" [toolClose]="false">
-              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
-              <ng-container name="body">
-                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-              </ng-container>
-            </share-alert>
-            <share-alert [styleTheme]="'warning'" [toolClose]="false">
-              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
-              <ng-container name="body">
-                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-              </ng-container>
-            </share-alert>
-            <share-alert [styleTheme]="'success'" [toolClose]="true">
-              <ng-container name="title"><i class="icon fa fa-info"></i> Alert!</ng-container>
-              <ng-container name="body">
-                Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-              </ng-container>
-            </share-alert>
+            <div class="row">
+              <div class="col-xs-2">
+                <share-box>
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    默认样式
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="1">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="1"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="2">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="2"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="3">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="3"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="4">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="4"
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-2">
+                <share-box [styleSolid]="true">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    styleTheme默认值
+                    [styleSolid]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="1" [styleSolid]="true">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="1"
+                    [styleSolid]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="2" [styleSolid]="true">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="2"
+                    [styleSolid]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="3" [styleSolid]="true">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="3"
+                    [styleSolid]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-2">
+                <share-box [styleTheme]="4" [styleSolid]="true">
+                  <ng-container name="title">
+                    styleTheme
+                  </ng-container>
+                  <ng-container name="body">
+                    [styleTheme]="4"
+                    [styleSolid]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5">
+                <share-box>
+                  <ng-container name="title">
+                    styleCollapsed
+                  </ng-container>
+                  <ng-container name="body">
+                    styleCollapsed默认值是true
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-5">
+                <share-box [styleCollapsed]="true">
+                  <ng-container name="title">
+                    styleCollapsed
+                  </ng-container>
+                  <ng-container name="body">
+                    将styleCollapsed设置为true
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5">
+                <share-box>
+                  <ng-container name="title">
+                    styleSolid
+                  </ng-container>
+                  <ng-container name="body">
+                    styleSolid默认值是false
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-5">
+                <share-box styleSolid="true">
+                  <ng-container name="title">
+                    styleSolid
+                  </ng-container>
+                  <ng-container name="body">
+                    styleSolid默认值是false
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5">
+                <share-box>
+                  <ng-container name="title">
+                    toolRemove
+                  </ng-container>
+                  <ng-container name="body">
+                    toolRemove默认值是false
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-5">
+                <share-box [toolRemove]="true">
+                  <ng-container name="title">
+                    toolRemove
+                  </ng-container>
+                  <ng-container name="body">
+                    [toolRemove]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5">
+                <share-box>
+                  <ng-container name="title">
+                    toolCollapse
+                  </ng-container>
+                  <ng-container name="body">
+                    toolCollapse默认值是true
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-5">
+                <share-box [toolCollapse]="false">
+                  <ng-container name="title">
+                    toolCollapse
+                  </ng-container>
+                  <ng-container name="body">
+                    [toolCollapse]="false"
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5">
+                <share-box>
+                  <ng-container name="title">
+                    loading
+                  </ng-container>
+                  <ng-container name="body">
+                    loading默认值是false
+                  </ng-container>
+                </share-box>
+              </div>
+              <div class="col-xs-5">
+                <share-box [loading]="true">
+                  <ng-container name="title">
+                    loading
+                  </ng-container>
+                  <ng-container name="body">
+                    [loading]="true"
+                  </ng-container>
+                </share-box>
+              </div>
+            </div>
           </ng-container>
-      </share-box>
+        </share-box>
+      </ng-container>
+    </share-box>
+</section>
+<section class="content">
+  <h3>警告框组件</h3>
+  <share-box [styleSolid]="true">
+    <ng-container name="title">
+      share-alert
+    </ng-container>
+    <div class="row" name="body">
+      <div class="col-xs-3">
+        <share-alert [styleTheme]="'danger'" [toolClose]="false">
+          <ng-container name="title">标题</ng-container>
+          <ng-container name="body">
+            主体部分 <br>
+            配置 <br>
+            [styleTheme]="'danger'" [toolClose]="false"
+          </ng-container>
+        </share-alert>
+      </div>
+      <div class="col-xs-3">
+        <share-alert [styleTheme]="'info'" [toolClose]="false">
+          <ng-container name="title"><i class="icon fa fa-info"></i> 标题</ng-container>
+          <ng-container name="body">
+            主体部分<br>
+            配置<br>
+            [styleTheme]="'info'" [toolClose]="false"
+          </ng-container>
+        </share-alert>
+      </div>
+      <div class="col-xs-3">
+        <share-alert [styleTheme]="'warning'" [toolClose]="false">
+          <ng-container name="title"><i class="icon fa fa-info"></i> 标题!</ng-container>
+          <ng-container name="body">
+            主体部分<br>
+            配置<br>
+            [styleTheme]="'warning'" [toolClose]="false"
+          </ng-container>
+        </share-alert>
+      </div>
+      <div class="col-xs-3">
+        <share-alert [styleTheme]="'success'" [toolClose]="true">
+          <ng-container name="title"><i class="icon fa fa-info"></i> 标题!</ng-container>
+          <ng-container name="body">
+            主体部分<br>
+            配置<br>
+            [styleTheme]="'success'" [toolClose]="true"
+          </ng-container>
+        </share-alert>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <share-box [toolCollapse]="false">
+  </share-box>
+  <share-box [styleSolid]="true">
+    <ng-container name="title">
+      callout
+    </ng-container>
+    <div class="row" name="body">
+      <div class="col-xs-3">
+      <share-callout [styleTheme]="'danger'">
         <ng-container name="title">
-          <i class="fa fa-warning"></i>callout
+          标题
         </ng-container>
         <ng-container name="body">
-          <share-callout [styleTheme]="'danger'">
-            <ng-container name="title">
-              I am a danger callout!
-            </ng-container>
-            <ng-container name="body">
-              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-            </ng-container>
-          </share-callout>
-          <share-callout [styleTheme]="'info'">
-            <ng-container name="title">
-              I am a danger callout!
-            </ng-container>
-            <ng-container name="body">
-              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-            </ng-container>
-          </share-callout>
-          <share-callout [styleTheme]="'warning'">
-            <ng-container name="title">
-              I am a danger callout!
-            </ng-container>
-            <ng-container name="body">
-              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-            </ng-container>
-          </share-callout>
-          <share-callout [styleTheme]="'success'">
-            <ng-container name="title">
-              I am a danger callout!
-            </ng-container>
-            <ng-container name="body">
-              There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-            </ng-container>
-          </share-callout>
+          [styleTheme]="'danger'"
+        </ng-container>
+      </share-callout>
+      </div>
+      <div class="col-xs-3">
+      <share-callout [styleTheme]="'info'">
+        <ng-container name="title">
+          标题
         </ng-container>
         <ng-container name="body">
-          share-callout组件使用指南
-          <p>该组件使用了内容投影，其中只要是 元素最外层容器的name属性等于'title',该元素及其所有后代元素都会投影到 标题部分。</p>
-          <p>同理 包含name='body'元素及其所有后代元素都会投影到 主体部分</p>
-          <p>可配置变量，styleTheme</p>
-          <p>可选值有：'danger'，'info'，'warning'，'success'</p>
+          [styleTheme]="'info'"
         </ng-container>
-      </share-box>
+      </share-callout>
+      </div>
+      <div class="col-xs-3">
+      <share-callout [styleTheme]="'warning'">
+        <ng-container name="title">
+          标题
+        </ng-container>
+        <ng-container name="body">
+          [styleTheme]="'warning'"
+        </ng-container>
+      </share-callout>
+      </div>
+      <div class="col-xs-3">
+      <share-callout [styleTheme]="'success'">
+        <ng-container name="title">
+          标题
+        </ng-container>
+        <ng-container name="body">
+          [styleTheme]="'success'"
+        </ng-container>
+      </share-callout>
+      </div>
     </div>
-  </div>
-
+  </share-box>
+</section>
+<section class="content">
+  <h3>分页</h3>
+  <share-box [styleSolid]="true">
+    <ng-container name="title">share-page-bar</ng-container>
+    <ng-container name="body">
+      <div class="col-xs-3">
+      <share-page-bar curPage="1" totalPage="3"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="1" totalPage="5"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="1" totalPage="100"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="3" totalPage="100"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="4" totalPage="100"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="98" totalPage="100"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="99" totalPage="100"></share-page-bar>
+      </div>
+      <div class="col-xs-3">
+      <share-page-bar curPage="100" totalPage="100"></share-page-bar>
+      </div>
+    </ng-container>
+  </share-box>
+</section>
+<section class="content">
+  <h3>进度条</h3>
+  <share-box [styleSolid]="true">
+    <ng-container name="title">share-progress-bar</ng-container>
+    <ng-container name="body">
+      <share-progress-bar [styleTheme]="1"></share-progress-bar>
+      <share-progress-bar [styleTheme]="2"></share-progress-bar>
+      <share-progress-bar [styleTheme]="3"></share-progress-bar>
+      <share-progress-bar [styleTheme]="4"></share-progress-bar>
+      <share-progress-bar [styleTheme]="5"></share-progress-bar>
+      <share-progress-bar [styleStripe]="true"></share-progress-bar>
+      <share-progress-bar [styleStripe]="true" [styleAnimate]="true" ></share-progress-bar>
+      <share-progress-bar [styleStripe]="true" [styleSize]="'sm'"></share-progress-bar>
+      <share-progress-bar [styleStripe]="true" [styleSize]="'xs'"></share-progress-bar>
+      <share-progress-bar [styleStripe]="true" [styleSize]="'xxs'"></share-progress-bar>
+    </ng-container>
+  </share-box>
 </section>
