@@ -32,4 +32,10 @@ export class LoginComponent implements OnInit {
       alert('用户名密码不匹配')
     })
   }
+  registerUser(){
+    this.router.navigateByUrl('/register');
+  }
+  forgetPassword(){
+    this.router.navigateByUrl('/register');
+  }
 }

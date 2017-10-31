@@ -32,18 +32,17 @@
         </div>
       </div>
       <button class="btn btn-primary btn-block btn-flat" (click)="validPassword()" [disabled]="!loginForm.valid">登陆</button>
+      <div class="row">
+        <div class="col-xs-6 ">
+          <a href="javascript:;" (click)="forgetPassword()" >忘记密码</a>
+        </div>
+        <div class="col-xs-6 text-right">
+          <a href="javascript:;" (click)="registerUser()" >注册一个新用户</a>
+        </div>
+      </div>
     </form>
-    <div class="row">
-      <div class="col-xs-6 ">
-        <a href="#">忘记密码</a>
-      </div>
-      <div class="col-xs-6 text-right">
-        <a href="#">注册一个新用户</a>
-      </div>
-    </div>
-    <!-- /.social-auth-links -->
   </div>
-  <!-- /.login-box-body -->
+
 </div>
 <!-- /.login-box -->
 </div>

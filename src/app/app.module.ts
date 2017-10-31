@@ -7,16 +7,20 @@ import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 import {LoginModule} from "./login/login.module";
 import {IndexModule} from "./index/index.module";
 import {CoreModule} from "./core/core.module";
+import {RegisterModule} from "./register/register.module";
+import {ForgetPasswordModule} from "./forget-password/forget-password.module";
 @NgModule({
   declarations: [
     AppComponent,
-    CannotFoundComponent
+    CannotFoundComponent,
   ],
   imports: [
     BrowserModule,
     CoreModule,
     LoginModule,
     IndexModule,
+    RegisterModule,
+    ForgetPasswordModule,
     AppRoutingModule
   ],
   providers: [],
