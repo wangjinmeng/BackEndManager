@@ -7,6 +7,7 @@ import { ShareAlertComponent } from './component/share-alert/share-alert.compone
 import { ShareCalloutComponent } from './component/share-callout/share-callout.component';
 import { SharePageBarComponent } from './component/share-page-bar/share-page-bar.component';
 import { ShareProgressBarComponent } from './component/share-progress-bar/share-progress-bar.component';
+import { ShareFormTextComponent } from './component/share-form-text/share-form-text.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { ShareProgressBarComponent } from './component/share-progress-bar/share-
     ShareAlertComponent,
     ShareCalloutComponent,
     SharePageBarComponent,
-    ShareProgressBarComponent
+    ShareProgressBarComponent,
+    ShareFormTextComponent
   ],
   exports:[
     FormsModule,
@@ -28,7 +30,8 @@ import { ShareProgressBarComponent } from './component/share-progress-bar/share-
     ShareAlertComponent,
     ShareCalloutComponent,
     SharePageBarComponent,
-    ShareProgressBarComponent
+    ShareProgressBarComponent,
+    ShareFormTextComponent
   ]
 })
 export class ShareModule { }

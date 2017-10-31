@@ -4,6 +4,7 @@ import {IndexComponent} from "./index/index.component";
 import {IndexGuard} from "../guard/index.guard";
 import {IndexResolveService} from "../guard/index-resolve/index-resolve.service";
 import {IndexUiGeneralComponent} from "./index-ui-general/index-ui-general.component";
+import {IndexFormPageComponent} from "./index-form-page/index-form-page.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -12,8 +13,9 @@ const routes: Routes = [
       userInfo:IndexResolveService
     },
     children:[
-      {path:'ui/general',component:IndexUiGeneralComponent},
-      {path:'',redirectTo:'ui/general',pathMatch:'full'}
+      {path:'general',component:IndexUiGeneralComponent},
+      {path:'form',component:IndexFormPageComponent},
+      {path:'',redirectTo:'general',pathMatch:'full'}
     ]
   }
 ];
