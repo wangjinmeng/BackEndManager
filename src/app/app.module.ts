@@ -7,8 +7,8 @@ import {CannotFoundComponent} from "./cannot-found/cannot-found.component";
 import {LoginModule} from "./login/login.module";
 import {IndexModule} from "./index/index.module";
 import {CoreModule} from "./core/core.module";
-import {RegisterModule} from "./register/register.module";
-import {ForgetPasswordModule} from "./forget-password/forget-password.module";
+// import {RegisterModule} from "./register/register.module";
+// import {ForgetPasswordModule} from "./forget-password/forget-password.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +19,8 @@ import {ForgetPasswordModule} from "./forget-password/forget-password.module";
     CoreModule,
     LoginModule,
     IndexModule,
-    RegisterModule,
-    ForgetPasswordModule,
+    // RegisterModule,
+    // ForgetPasswordModule,
     AppRoutingModule
   ],
   providers: [],

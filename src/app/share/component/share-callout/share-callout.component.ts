@@ -2,8 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'share-callout',
-  templateUrl: './share-callout.component.html',
-  styleUrls: ['./share-callout.component.css']
+  templateUrl: './share-callout.component.html'
 })
 export class ShareCalloutComponent implements OnInit {
   @Input() styleTheme:string='info';

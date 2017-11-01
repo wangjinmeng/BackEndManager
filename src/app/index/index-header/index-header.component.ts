@@ -15,4 +15,7 @@ export class IndexHeaderComponent implements OnInit {
   toggleNavState(){
     this.toggleNavStateEvent.emit();
   }
+  signOut(){
+
+  }
 }
