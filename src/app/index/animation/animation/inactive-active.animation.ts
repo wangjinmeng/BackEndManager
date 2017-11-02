@@ -1,7 +1,5 @@
 import {trigger, state, style, transition, animate} from "@angular/animations";
-/**
- * Created by qs on 2017/11/2.
- */
+
 export const INACTIVE_ACTIVE=
   trigger('InOrActive', [
     state('inactive', style({
