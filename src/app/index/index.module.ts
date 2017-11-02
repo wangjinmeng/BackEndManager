@@ -9,6 +9,7 @@ import {IndexResolveService} from "../guard/index-resolve/index-resolve.service"
 import { IndexSidebarComponent } from './index-sidebar/index-sidebar.component';
 import { IndexUiGeneralComponent } from './index-ui-general/index-ui-general.component';
 import { IndexFormPageComponent } from './index-form-page/index-form-page.component';
+import { AnimationComponent } from './animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IndexFormPageComponent } from './index-form-page/index-form-page.compon
     IndexHeaderComponent,
     IndexSidebarComponent,
     IndexUiGeneralComponent,
-    IndexFormPageComponent
+    IndexFormPageComponent,
+    AnimationComponent
   ],
   imports: [
     ShareModule,
