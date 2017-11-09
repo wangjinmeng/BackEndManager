@@ -1,0 +1,5 @@
+<form [formGroup]="formGroup" class="form-horizontal">
+  <ng-container *ngFor="let data of formData">
+    <share-form-temp [form]="formGroup" [formData]="data"></share-form-temp>
+  </ng-container>
+</form>
