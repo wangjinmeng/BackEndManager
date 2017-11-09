@@ -1,5 +1,4 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-index-header',
@@ -11,12 +10,9 @@ export class IndexHeaderComponent implements OnInit {
   @Input() userName:string;
   @Input() userImg:string;
   title:string='';
-  constructor(private router:Router) { }
+  constructor() { }
   ngOnInit() {}
   toggleNavState(){
     this.toggleNavStateEvent.emit();
-  }
-  signOut(){
-    this.router.navigateByUrl('/login');
   }
 }

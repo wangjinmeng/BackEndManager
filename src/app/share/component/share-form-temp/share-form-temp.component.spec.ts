@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShareFormTextComponent } from './share-form-text.component';
+import { ShareFormTempComponent } from './share-form-temp.component';
 
-describe('ShareFormTextComponent', () => {
-  let component: ShareFormTextComponent;
-  let fixture: ComponentFixture<ShareFormTextComponent>;
+describe('ShareFormTempComponent', () => {
+  let component: ShareFormTempComponent;
+  let fixture: ComponentFixture<ShareFormTempComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShareFormTextComponent ]
+      declarations: [ ShareFormTempComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShareFormTextComponent);
+    fixture = TestBed.createComponent(ShareFormTempComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

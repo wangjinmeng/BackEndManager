@@ -9,16 +9,62 @@
 </section>
 <section class="content">
   <share-box>
-    <ng-container name="title">form</ng-container>
-    <form name="body" [formGroup]="formGroup" class="form-horizontal">
-      <ng-container *ngFor="let data of formData">
-        <share-form-text [form]="formGroup" [formData]="data"></share-form-text>
-      </ng-container>
+    <ng-container name="title">share-form-box</ng-container>
+    <ng-container name="body" >
+      <share-form-box [formData]="formData"></share-form-box>
       form的值:{{formGroup.value|json}}
       <br>
       验证结果:{{formGroup.valid}}
+    </ng-container>
 
-    </form>
+  </share-box>
+  <share-box [styleTheme]="1" [styleSolid]="true">
+    <ng-container name="title">使用方法</ng-container>
+    <ng-container name="body">
+      <p>
+        share-form-box插件依赖于share这个特性模块，所以需要用到share-form-box的插件必须引入share这个特性模块
+      </p>
+      <p>
+        share-form-box的使用方法与其他组件一样，需要一个输入属性formData;
+        formData是一个符合格式要求的数组。
+        提供了六个类:FormText、FormPassword、FormSelect、FormCheck、FormRadio、FormTextarea
+        分别对应 文本框、密码框、下拉框、复选框、单选框、文本域
+      </p>
+      <p>向普通的组件一样使用</p>
+      <pre>&lt;share-form-box [formData]=&quot;formData&quot;&gt;&lt;/share-form-box&gt;</pre>
+      <p>
+        接受一个参数，formData;
+        但是formData的格式必须严格实现 formDateModel中的五个类:FormText、FormPassword、FormSelect、FormCheck、FormRadio、FormTextarea
+      </p>
+      <p>FormText:</p>
+      <pre>
+        {{formData[1]|json}}
+      </pre>
+      <p>FormPassword:</p>
+      <pre>
+        {{formData[2]|json}}
+      </pre>
+      <p>FormSelect:</p>
+      <pre>
+        {{formData[4]|json}}
+      </pre>
+      <p>FormCheck:</p>
+      <pre>
+        {{formData[6]|json}}
+      </pre>
+      <p>FormRadio:</p>
+      <pre>
+        {{formData[5]|json}}
+      </pre>
+      <p>FormTextarea:</p>
+      <pre>
+        {{formData[3]|json}}
+      </pre>
+      <p>
+        获取formGroup对象的方法
+      </p>
+      <pre>@ViewChild(ShareFormBoxComponent) private formBoxComponent: ShareFormBoxComponent;</pre>
+    </ng-container>
   </share-box>
 </section>
 

@@ -10,6 +10,7 @@ import { IndexSidebarComponent } from './index-sidebar/index-sidebar.component';
 import { IndexUiGeneralComponent } from './index-ui-general/index-ui-general.component';
 import { IndexFormPageComponent } from './index-form-page/index-form-page.component';
 import { AnimationComponent } from './animation/animation.component';
+import { IndexTreePageComponent } from './index-tree-page/index-tree-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { AnimationComponent } from './animation/animation.component';
     IndexUiGeneralComponent,
     IndexFormPageComponent,
     AnimationComponent
+    IndexFormPageComponent,
+    IndexTreePageComponent
   ],
   imports: [
     ShareModule,

@@ -10,10 +10,7 @@ export class SharePageBarComponent implements OnInit {
   @Output() changePage=new EventEmitter();
   maxLen=5;
   pageArr:any[];
-  constructor() {
-    console.log(this.curPage);
-    console.log(this.totalPage);
-  }
+  constructor() {}
   //一共用三种模式：
   //1:12345;1234;123;12;1;
   //2: 1,2,3,4...,totalPage

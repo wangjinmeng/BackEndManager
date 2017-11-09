@@ -2,8 +2,7 @@ import {Component, OnInit, Input, OnChanges, Output} from '@angular/core';
 
 @Component({
   selector: 'share-alert',
-  templateUrl: './share-alert.component.html',
-  styleUrls: ['./share-alert.component.css']
+  templateUrl: './share-alert.component.html'
 })
 export class ShareAlertComponent implements OnInit,OnChanges {
   @Input() styleTheme:string='info';

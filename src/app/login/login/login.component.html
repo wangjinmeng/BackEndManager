@@ -8,8 +8,8 @@
     <p class="login-box-msg"></p>
     <form [formGroup]="loginForm">
       <div class="form-group has-feedback"  [class.has-error]="(name.dirty||name.touched)&&!name.valid">
-        <input class="form-control" placeholder="Email" type="email" formControlName="name">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <input class="form-control" placeholder="userName" type="text" formControlName="name">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
         <div class="bg-red disabled color-palette" [hidden]="(name.pristine&&name.untouched)||name.valid">
           <ng-container *ngIf="name.hasError('required')">
             请输入用户名
@@ -42,7 +42,6 @@
       </div>
     </form>
   </div>
-
 </div>
 <!-- /.login-box -->
 </div>
