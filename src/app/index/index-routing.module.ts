@@ -17,7 +17,7 @@ const routes: Routes = [
     children:[
       {path:'general',component:IndexUiGeneralComponent},
       {path:'form',component:IndexFormPageComponent},
-      {path:'animation',component:AnimationComponent},
+      // {path:'animation',component:AnimationComponent},
       {path:'tree',component:IndexTreePageComponent},
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]

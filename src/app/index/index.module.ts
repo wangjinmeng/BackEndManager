@@ -20,7 +20,7 @@ import { IndexTreePageComponent } from './index-tree-page/index-tree-page.compon
     IndexSidebarComponent,
     IndexUiGeneralComponent,
     IndexFormPageComponent,
-    AnimationComponent
+    AnimationComponent,
     IndexFormPageComponent,
     IndexTreePageComponent
   ],
