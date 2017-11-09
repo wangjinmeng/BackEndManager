@@ -1,0 +1,32 @@
+.ani-box{
+  margin:20px;
+}
+.shrink-out{
+  display: block;
+  width: 120px;
+  line-height: 50px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: pink;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#fff;
+}
+.fly-in-out{
+  width:120px;
+
+  background-color:#ff0044;
+  text-align:center;
+  color:#fff;
+}
+.pop-over{
+
+}
+.widthDiv{
+  width:60px;
+  border:solid;
+}
+
