@@ -6,6 +6,7 @@ import {IndexResolveService} from "../guard/index-resolve/index-resolve.service"
 import {IndexUiGeneralComponent} from "./index-ui-general/index-ui-general.component";
 import {IndexFormPageComponent} from "./index-form-page/index-form-page.component";
 import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.component";
+import {AnimationComponent} from "./animation/animation.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -16,6 +17,7 @@ const routes: Routes = [
     children:[
       {path:'general',component:IndexUiGeneralComponent},
       {path:'form',component:IndexFormPageComponent},
+      {path:'animation',component:AnimationComponent},
       {path:'tree',component:IndexTreePageComponent},
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
