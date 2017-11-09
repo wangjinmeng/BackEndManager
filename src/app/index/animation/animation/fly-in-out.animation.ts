@@ -1,39 +1,19 @@
-import { animate, state, style, transition, trigger, group } from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 export const FLY_IN_OUT_ANIMATION =
-  trigger('flyInOutTrigger', [
-    state('in', style({
-		    backgroundColor: 'yellow',
-	        color: '#080809',
-			transform: 'translateX(0)',
-			opacity: 1
-	})),
-    transition(':enter', [
+  trigger('flyInOut', [
+    state('in', style({opacity: 1, transform: 'translateX(0)'})),
+    transition('void => *', [
       style({
-	        backgroundColor: 'red',
-		    transform: 'translateX(300%)',
-		    opacity: 0
-	  }),
-      group([
-        animate('0.5s 0.1s ease-in', style({
-            transform: 'translateX(0)',
-        })),
-        animate('0.3s 0.1s ease', style({
-            opacity: 1
-        }))
-      ])
+        opacity: 0,
+        transform: 'translateX(200px)'
+      }),
+      animate('2s ease-in')
     ]),
-    transition(':leave', [
-      style({
-	        backgroundColor: 'green',
-	  }),
-      group([
-        animate('0.5s ease-out', style({
-            transform: 'translateX(300%)'
-        })),
-        animate('0.3s 0.1s ease', style({
-            opacity: 0
-        }))
-      ])
+    transition('* => void', [
+      animate('2s 0.1s ease-out', style({
+        opacity: 0,
+        transform: 'translateX(100%)'
+      }))
     ])
-  ]);
+  ])
