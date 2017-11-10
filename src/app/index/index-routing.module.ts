@@ -15,16 +15,52 @@ const routes: Routes = [
       userInfo:IndexResolveService
     },
     children:[
-      {path:'general',component:IndexUiGeneralComponent},
-      {path:'form',component:IndexFormPageComponent},
-      // {path:'animation',component:AnimationComponent},
-      {path:'tree',component:IndexTreePageComponent},
+      {
+        path:'general',
+        component:IndexUiGeneralComponent,
+        data: {
+          path: 'general',
+          name:'小部件',
+          id:1
+        }
+      },
+      {
+        path:'form',
+        component:IndexFormPageComponent,
+        data: {
+          path: 'form',
+          name:'表单',
+          id:2
+        }
+      },
+      {
+        path:'animation',
+        component:AnimationComponent,
+        data: {
+          path: 'animation',
+          name:'动画',
+          id:3
+        }
+      },
+      {
+        path:'tree',
+        component:IndexTreePageComponent,
+        data: {
+          path: 'tree',
+          name:'树',
+          id:4
+        }
+      },
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
   }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[
+    IndexGuard,
+    IndexResolveService,
+  ]
 })
 export class IndexRoutingModule{}

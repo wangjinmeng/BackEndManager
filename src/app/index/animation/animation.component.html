@@ -1,35 +1,22 @@
-<section class="content-header">
-  <h1>
-    动画
-  </h1>
-  <ol class="breadcrumb">
-    <li><a><i class="fa fa-dashboard"></i> 首页</a></li>
-    <li class="active"><i class="fa fa-cubes"></i>动画</li>
-  </ol>
-</section>
-<section class="content">
-    <div class="ani-box">
-      <div>
-        <h3>shrink-out</h3>
-        <div class="btn shrink-out"   [@shrinkOut]="'in'" >shrink-out</div>
-      </div>
-      <div>
-        <h3>active-inactive</h3>
-        <div class="btn btn-warning" [@InOrActive]="state" (click)="toggle(state)">active-inactive</div>
-      </div>
-      <div>
-        <h3>fly-in-out</h3>
-        <div  class="btn fly-in-out" [@flyInOut]="'in'" >fly-in-out</div>
-      </div>
-      <div>
-        <h3>pop-over</h3>
-        <div   class="pop-over"   [@popOverState]="stateName">
-          <p>Hello! I'm a helpful message.</p>
-        </div>
-        <button (click)="togglePop()">Toggle PopOver</button>
-      </div>
 
+<div class="ani-box">
+  <div>
+    <h3>shrink-out</h3>
+    <div class="btn shrink-out"   [@shrinkOut]="'in'" >shrink-out</div>
+  </div>
+  <div>
+    <h3>active-inactive</h3>
+    <div class="btn btn-warning" [@InOrActive]="state" (click)="toggle(state)">active-inactive</div>
+  </div>
+  <div>
+    <h3>fly-in-out</h3>
+    <div  class="btn fly-in-out" [@flyInOut]="'in'" >fly-in-out</div>
+  </div>
+  <div>
+    <h3>pop-over</h3>
+    <div   class="pop-over"   [@popOverState]="stateName">
+      <p>Hello! I'm a helpful message.</p>
     </div>
-
-</section>
-
+    <button (click)="togglePop()">Toggle PopOver</button>
+  </div>
+</div>

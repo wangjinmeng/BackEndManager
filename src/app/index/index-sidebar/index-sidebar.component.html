@@ -4,28 +4,10 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
       <li class="header">菜单</li>
-      <li>
-        <a routerLink="./general">
-          <i class="fa  fa-cubes"></i>
-          <span>样式库</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="./form">
-          <i class="fa  fa-cubes"></i>
-          <span>表单</span>
-        </a>
-      </li>
-      <li class="active">
-        <a routerLink="./tree">
-          <i class="fa  fa-cubes"></i>
-          <span>树</span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a routerLink="./animation">
-          <i class="fa  fa-cubes"></i>
-          <span>特效/动画</span>
+      <li *ngFor="let nav of navList"  [class.active]="nav.id===curId">
+        <a [routerLink]="'./'+nav.path">
+          <i [ngClass]="nav.style"></i>
+          <span>{{nav.name}}</span>
         </a>
       </li>
     </ul>

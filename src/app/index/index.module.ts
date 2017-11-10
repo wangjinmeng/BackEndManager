@@ -11,6 +11,7 @@ import { IndexUiGeneralComponent } from './index-ui-general/index-ui-general.com
 import { IndexFormPageComponent } from './index-form-page/index-form-page.component';
 import { AnimationComponent } from './animation/animation.component';
 import { IndexTreePageComponent } from './index-tree-page/index-tree-page.component';
+import {NavService} from "./nav.service";
 
 @NgModule({
   declarations: [
@@ -29,8 +30,7 @@ import { IndexTreePageComponent } from './index-tree-page/index-tree-page.compon
     IndexRoutingModule
   ],
   providers:[
-    IndexGuard,
-    IndexResolveService
+    NavService
   ]
 })
 export class IndexModule { }
