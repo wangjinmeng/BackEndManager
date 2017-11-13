@@ -1,0 +1,15 @@
+<share-box [toolCollapse]="false" [styleTheme]="1" [loading]="loadingFlag">
+  <ng-container name="title">{{formTitle}}</ng-container>
+  <ng-container name="body">
+    <share-form-box [formData]="formData">
+      <ng-container name="form-btn">
+        <button type="button" class="btn  btn-primary" [disabled]="!formGroup.valid" (click)="submit()">
+          提交
+        </button>
+        <button type="button" class="btn  btn-default" (click)="cancel()">
+          取消
+        </button>
+      </ng-container>
+    </share-form-box>
+  </ng-container>
+</share-box>
