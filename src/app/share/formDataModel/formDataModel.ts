@@ -1,4 +1,4 @@
-export const formType=['text','password','select','check','radio','textarea']
+export const formType=['text','password','select','check','radio','textarea','hidden'];
 export class Limit{
   required:boolean;
   minLength:number;
@@ -89,5 +89,11 @@ export class FormTextarea extends FormBase<string>{
   constructor(opts={}){
     super(opts);
     this.placeholder=opts['placeholder']||'请输入'+opts['label'];
+  }
+}
+export class FormHidden extends FormBase<string>{
+  controlType=formType[6];
+  constructor(opts={}){
+    super(opts);
   }
 }

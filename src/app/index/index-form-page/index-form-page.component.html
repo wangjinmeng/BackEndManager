@@ -2,14 +2,18 @@
   <share-box>
     <ng-container name="title">share-form-box</ng-container>
     <ng-container name="body" >
-      <share-form-box [formData]="formData"></share-form-box>
+<share-form-box [formData]="formData">
+  <ng-container name="form-btn">
+    <button class="btn btn-primary" [disabled]="!formGroup.valid">提交</button>
+    <button class="btn btn-default" (click)="reset()">重置</button>
+  </ng-container>
+</share-form-box>
       form的值:{{formGroup.value|json}}
       <br>
       验证结果:{{formGroup.valid}}
     </ng-container>
-
   </share-box>
-  <share-box [styleTheme]="1" [styleSolid]="true">
+  <share-box [styleTheme]="1" [styleSolid]="true" [toolCollapse]="false">
     <ng-container name="title">使用方法</ng-container>
     <ng-container name="body">
       <p>
@@ -27,34 +31,79 @@
         接受一个参数，formData;
         但是formData的格式必须严格实现 formDateModel中的五个类:FormText、FormPassword、FormSelect、FormCheck、FormRadio、FormTextarea
       </p>
-      <p>FormText:</p>
+      <p >FormText:</p>
       <pre>
         {{formData[1]|json}}
       </pre>
-      <p>FormPassword:</p>
-      <pre>
+      <p name="title">FormPassword:</p>
+      <pre name="body">
         {{formData[2]|json}}
       </pre>
-      <p>FormSelect:</p>
+      <p >FormSelect:</p>
       <pre>
         {{formData[4]|json}}
       </pre>
-      <p>FormCheck:</p>
+      <p >FormCheck:</p>
       <pre>
         {{formData[6]|json}}
       </pre>
-      <p>FormRadio:</p>
+      <p >FormRadio:</p>
       <pre>
         {{formData[5]|json}}
       </pre>
-      <p>FormTextarea:</p>
+      <p >FormTextarea:</p>
       <pre>
         {{formData[3]|json}}
       </pre>
-      <p>
-        获取formGroup对象的方法
-      </p>
-      <pre>@ViewChild(ShareFormBoxComponent) private formBoxComponent: ShareFormBoxComponent;</pre>
+      <dl>
+        <dt>获取formGroup对象的方法:</dt>
+        <dd>
+          <pre>@ViewChild(ShareFormBoxComponent) private formBoxComponent: ShareFormBoxComponent;</pre>
+        </dd>
+        <dt>重置表单</dt>
+        <dd>
+          <p>
+            对表单进行重置分为两种情况:
+          </p>
+          <ol>
+            <li>
+              通过新数据将表单还原到初始状态，并且还原表单的验证状态；
+            </li>
+            <li>
+             将表单中的所有数据都至为空,还原表单的验证状态
+            </li>
+          </ol>
+          <p>
+          </p>
+        </dd>
+        <dd></dd>
+        <dt>隐藏域</dt>
+        <dd>
+          表单中还有可能会遇到隐藏域，隐藏域与其他类型有一点不一样的是他不需要显示出来所以lable属性就不是必须的，不会显示用户就不会对齐进行操作，所以只需
+          要value和key这两个属性就够了
+          <pre>
+            {{formData[7]|json}}
+          </pre>
+          <p>最上面的例子中的最后一个属性id就是输赢隐藏域，用户看不到，无法对齐进行操作</p>
+        </dd>
+        <dt>内容投射</dt>
+        <dd>
+          <p>
+            表单插件内部预留了内容投射插槽，可以通过这个插槽往form元素中添加额外的内容，例如，提交按钮，重置按钮，具体的操作如下面代码所示:
+          </p>
+          <pre>
+&lt;share-form-box [formData]=&quot;formData&quot;&gt;
+  &lt;ng-container name=&quot;form-btn&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; [disabled]=&quot;!formGroup.valid&quot;&gt;提交&lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot;&gt;重置&lt;/button&gt;
+  &lt;/ng-container&gt;
+&lt;/share-form-box&gt;
+          </pre>
+            <p>
+              主要原理就是将一个[name="form-btn"] 的元素的内容放入插件内部的插槽中,以保证布局的统一性，实际的效果就是最上面表单的提交和取消按钮
+            </p>
+        </dd>
+      </dl>
     </ng-container>
   </share-box>
 

@@ -1,4 +1,7 @@
-<div class="form-group" [formGroup]="form" [class.has-error]="(name.dirty||name.touched)&&!name.valid">
+<div class="form-group"
+     [formGroup]="form"
+     [class.has-error]="(name.dirty||name.touched)&&!name.valid"
+     [class.hidden]="formData.controlType===formType[6]">
   <label class="col-sm-2 control-label">{{formData.label}}</label>
   <div class="col-sm-10">
     <ng-container [ngSwitch]="formData.controlType" >
@@ -34,6 +37,10 @@
                 [formControlName]="formData.key"
                 class="form-control" rows="3">
       </textarea>
+      <input *ngSwitchCase="formType[6]"
+             [formControlName]="formData.key"
+             class="form-control"
+             type="hidden" >
     </ng-container>
     <div class="bg-red disabled color-palette" [hidden]="(name.pristine&&name.untouched)||name.valid">
       <ng-container *ngIf="name.hasError('required')">

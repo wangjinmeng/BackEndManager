@@ -9,3 +9,4 @@ body{
 .sidebar-collapse .main-sidebar {
   transform: translateX(0);
 }
+ol{list-style-type:upper-alpha;}

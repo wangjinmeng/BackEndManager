@@ -12,6 +12,10 @@ import { IndexFormPageComponent } from './index-form-page/index-form-page.compon
 import { AnimationComponent } from './animation/animation.component';
 import { IndexTreePageComponent } from './index-tree-page/index-tree-page.component';
 import {NavService} from "./nav.service";
+import {AuthorityService} from "./core/service/authority.service";
+import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
+import { IndexAuthorityListComponent } from './index-authority/list/list.component';
+import { IndexAuthorityFormComponent } from './index-authority/form/form.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,18 @@ import {NavService} from "./nav.service";
     IndexFormPageComponent,
     AnimationComponent,
     IndexFormPageComponent,
-    IndexTreePageComponent
+    IndexTreePageComponent,
+    IndexAuthorityComponent,
+    IndexAuthorityListComponent,
+    IndexAuthorityFormComponent
   ],
   imports: [
     ShareModule,
     IndexRoutingModule
   ],
   providers:[
-    NavService
+    NavService,
+    AuthorityService
   ]
 })
-export class IndexModule { }
+export class IndexModule {}

@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormGroup, FormControl, Validators, FormArray, FormBuilder, ValidatorFn, AbstractControl} from "@angular/forms";
 import {
   FormText, FormPassword, FormBase, Limit, FormTextarea,
-  FormSelect, FormRadio, FormCheck, formType
+  FormSelect, FormRadio, FormCheck, formType, FormHidden
 } from "../../share/formDataModel/formDataModel";
 import {ShareFormBoxComponent} from "../../share/component/share-form-box/share-form-box.component";
 @Component({
@@ -81,12 +81,21 @@ export class IndexFormPageComponent implements OnInit {
         {key:'swimming',label:'游泳'},
         {key:'running',label:'跑步'}
       ]
+    }),
+    new FormHidden({
+      value:'1',
+      key:'id'
     })
   ];
   @ViewChild(ShareFormBoxComponent)
   private formBoxComponent: ShareFormBoxComponent;
   get formGroup(){
     return this.formBoxComponent.formGroup;
+  }
+  reset(){
+    if(this.formGroup){
+      this.formGroup.reset();
+    }
   }
   constructor() {}
   ngOnInit() {}

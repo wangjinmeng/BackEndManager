@@ -7,6 +7,7 @@ import {IndexUiGeneralComponent} from "./index-ui-general/index-ui-general.compo
 import {IndexFormPageComponent} from "./index-form-page/index-form-page.component";
 import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.component";
 import {AnimationComponent} from "./animation/animation.component";
+import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -49,6 +50,16 @@ const routes: Routes = [
           path: 'tree',
           name:'树',
           id:4
+        }
+      },
+      {
+        path:'authority',
+        component:IndexAuthorityComponent,
+        data:   {
+          path: 'authority',
+          name:'权限管理',
+          style:'fa  fa-heartbeat',
+          id:5
         }
       },
       {path:'',redirectTo:'general',pathMatch:'full'}

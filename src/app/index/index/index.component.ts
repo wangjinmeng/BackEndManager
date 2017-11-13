@@ -9,7 +9,10 @@ import {NavService} from "../nav.service";
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styles:[
+    ` 
+ `
+  ]
 })
 export class IndexComponent implements OnInit {
   sidebarCollapse:boolean=false;
