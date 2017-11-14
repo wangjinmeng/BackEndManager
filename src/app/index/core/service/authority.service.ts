@@ -38,6 +38,12 @@ export class AuthorityService{
       name:'权限管理',
       style:'glyphicon glyphicon-menu-hamburger',
       id:5
+    },
+    {
+      path: 'role',
+      name:'角色管理',
+      style:'fa  fa-user',
+      id:6
     }
   ];
   count:number=this.authorityArrs.length+1;

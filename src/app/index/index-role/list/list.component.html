@@ -1,0 +1,35 @@
+<share-box [toolCollapse]="false" [loading]="!roles">
+  <ng-container name='tool'>
+    <a class="btn btn-sm btn-primary" (click)="add()">
+      <i class="glyphicon glyphicon-plus"></i>
+    </a>
+  </ng-container>
+  <ng-container name="title">角色</ng-container>
+  <ng-container name="body">
+    <table class="table table-bordered">
+      <tbody>
+      <tr>
+        <th style="width: 15px">#</th>
+        <th>名称</th>
+        <th>操作</th>
+      </tr>
+      <ng-container *ngIf="roles">
+        <tr *ngFor="let item of roles;let i=index;" [class.bg-gray]="curEditId===item.id">
+          <td>
+            {{i+1}}
+          </td>
+          <td>{{item.name}}</td>
+          <td>
+            <a type="button" class="btn  btn-success  btn-sm" (click)="edit(item)">
+              <i class="glyphicon glyphicon-pencil"></i>
+            </a>
+            <a type="button" class="btn  btn-danger btn-sm" (click)="delete(item.id)">
+              <i class="glyphicon glyphicon-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </ng-container>
+</share-box>

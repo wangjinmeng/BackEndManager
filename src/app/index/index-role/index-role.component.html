@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-4 col-sm-12">
+    <index-role-list
+      [roles]="roles"
+      [curEditId]="curEditId"
+      (addEvent)="add()"
+      (deleteEvent)="delete($event)"
+      (editEvent)="edit($event)"></index-role-list>
+  </div>
+  <div class="col-lg-8 col-sm-12">
+    <index-role-form [authorities]="authorities" [role]="curRole" (cancelEvent)="cancel()" (submitEvent)="submit($event)"></index-role-form>
+  </div>
+</div>
+<div class="row" [hidden]="true">
+  <div class="col-sm-12">
+    <share-box [styleSolid]="true" [styleTheme]="4">
+      <ng-container name="title">TODO</ng-container>
+      <ng-container name="body">
+        <ol>
+          <li>
+            将数据改为异步的
+          </li>
+          <li>
+            将表单操作这块改为路由，并且加上路由守卫
+          </li>
+        </ol>
+      </ng-container>
+    </share-box>
+  </div>
+</div>

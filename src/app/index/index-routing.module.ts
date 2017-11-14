@@ -8,6 +8,7 @@ import {IndexFormPageComponent} from "./index-form-page/index-form-page.componen
 import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.component";
 import {AnimationComponent} from "./animation/animation.component";
 import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
+import {IndexRoleComponent} from "./index-role/index-role.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -60,6 +61,16 @@ const routes: Routes = [
           name:'权限管理',
           style:'fa  fa-heartbeat',
           id:5
+        }
+      },
+      {
+        path:'role',
+        component:IndexRoleComponent,
+        data:   {
+          path: 'role',
+          name:'角色管理',
+          style:'fa  fa-user',
+          id:6
         }
       },
       {path:'',redirectTo:'general',pathMatch:'full'}
