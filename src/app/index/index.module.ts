@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { IndexComponent } from './index/index.component';
 import {IndexRoutingModule} from "./index-routing.module";
 import {ShareModule} from "../share/share.module";
+import {IndexGuard} from "../guard/index.guard";
 import { IndexFooterComponent } from './index-footer/index-footer.component';
 import { IndexHeaderComponent } from './index-header/index-header.component';
+import {IndexResolveService} from "../guard/index-resolve/index-resolve.service";
 import { IndexSidebarComponent } from './index-sidebar/index-sidebar.component';
 import { IndexUiGeneralComponent } from './index-ui-general/index-ui-general.component';
 import { IndexFormPageComponent } from './index-form-page/index-form-page.component';
@@ -18,6 +20,9 @@ import { IndexRoleComponent } from './index-role/index-role.component';
 import { IndexRoleListComponent } from './index-role/list/list.component';
 import { IndexRoleFormComponent } from './index-role/form/form.component';
 import {RoleService} from "./core/service/role.service";
+import { TablesComponent } from './tables/tables.component';
+import { CalendarComponent } from './calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +41,10 @@ import {RoleService} from "./core/service/role.service";
     IndexRoleComponent,
     IndexRoleListComponent,
     IndexRoleFormComponent
+    IndexAuthorityFormComponent,
+    TablesComponent,
+    CalendarComponent,
+
   ],
   imports: [
     ShareModule,

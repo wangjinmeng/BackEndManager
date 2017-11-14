@@ -1,11 +1,14 @@
 .ani-box{
   margin:20px;
 }
+.shrink-content{
+  min-height:80px;
+}
 .shrink-out{
   display: block;
   width: 120px;
-  line-height: 50px;
-  padding: 0 10px;
+  line-height:50px;
+  text-align:center;
   box-sizing: border-box;
   background-color: pink;
   border-radius: 4px;
@@ -17,10 +20,12 @@
 }
 .fly-in-out{
   width:120px;
-
   background-color:#ff0044;
   text-align:center;
   color:#fff;
+}
+.fly2{
+  background-color:#e54b75;
 }
 .pop-over{
 

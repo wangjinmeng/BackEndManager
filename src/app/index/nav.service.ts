@@ -19,10 +19,24 @@ const navData=[
     id:3
   },
   {
+    path: 'tables',
+    name:'表格',
+    style:'fa fa-table ',
+    id:4
+  },
+  {
+    path: 'calendar',
+    name:'日期',
+    style:'fa fa-calendar ',
+    id:5
+  },
+
+
+  {
     path: 'tree',
     name:'树',
     style:'fa  fa-heartbeat',
-    id:4
+    id:7
   },
   {
     path: 'authority',
@@ -35,6 +49,7 @@ const navData=[
     name:'角色管理',
     style:'fa  fa-user',
     id:6
+    id:8
   }
 ];
 @Injectable()
