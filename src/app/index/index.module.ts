@@ -22,6 +22,8 @@ import { IndexRoleFormComponent } from './index-role/form/form.component';
 import {RoleService} from "./core/service/role.service";
 import { TablesComponent } from './tables/tables.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import {TablesService} from "./tables/tables.service";
+import { TablesPipe } from './tables/tables.pipe';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     IndexRoleFormComponent,
     IndexAuthorityFormComponent,
     TablesComponent,
-    CalendarComponent
+    CalendarComponent,
+    TablesPipe
   ],
   imports: [
     ShareModule,
@@ -52,7 +55,8 @@ import { CalendarComponent } from './calendar/calendar.component';
   providers:[
     NavService,
     AuthorityService,
-    RoleService
+    RoleService,
+    TablesService
   ]
 })
 export class IndexModule {}
