@@ -11,22 +11,17 @@ import { IndexUiGeneralComponent } from './index-ui-general/index-ui-general.com
 import { IndexFormPageComponent } from './index-form-page/index-form-page.component';
 import { AnimationComponent } from './animation/animation.component';
 import { IndexTreePageComponent } from './index-tree-page/index-tree-page.component';
-import {NavService} from "./nav.service";
-import {AuthorityService} from "./core/service/authority.service";
 import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
 import { IndexAuthorityListComponent } from './index-authority/list/list.component';
 import { IndexAuthorityFormComponent } from './index-authority/form/form.component';
 import { IndexRoleComponent } from './index-role/index-role.component';
 import { IndexRoleListComponent } from './index-role/list/list.component';
 import { IndexRoleFormComponent } from './index-role/form/form.component';
-import {RoleService} from "./core/service/role.service";
 import { TablesComponent } from './tables/tables.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {IndexUserComponent} from "./index-user/index-user.component";
 import {IndexUserListComponent} from "./index-user/list/list.component";
 import {IndexUserFormComponent} from "./index-user/form/form.component";
-import { PreviewimgComponent } from './previewimg/previewimg.component';
-import {PreviewimgService} from "./previewimg/previewimg.service";
 
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
@@ -50,9 +45,11 @@ import { TablesPipe } from './tables/tables.pipe';
     IndexRoleListComponent,
     IndexRoleFormComponent,
     IndexAuthorityFormComponent,
+    IndexUserComponent,
+    IndexUserListComponent,
+    IndexUserFormComponent,
     TablesComponent,
     CalendarComponent,
-    PreviewimgComponent,
     CalendarComponent,
     TablesPipe
   ],
