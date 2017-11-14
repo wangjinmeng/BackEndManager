@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {users} from "../userInfor";
-
 export class UserInfo{
   constructor(
     public id:string,
@@ -8,7 +7,6 @@ export class UserInfo{
     public img:string
   ){}
 }
-
 @Injectable()
 export class UserInfoService {
   constructor() { }
