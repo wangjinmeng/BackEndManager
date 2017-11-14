@@ -22,6 +22,12 @@ import { IndexRoleFormComponent } from './index-role/form/form.component';
 import {RoleService} from "./core/service/role.service";
 import { TablesComponent } from './tables/tables.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import {IndexUserComponent} from "./index-user/index-user.component";
+import {IndexUserListComponent} from "./index-user/list/list.component";
+import {IndexUserFormComponent} from "./index-user/form/form.component";
+import { PreviewimgComponent } from './previewimg/previewimg.component';
+import {PreviewimgService} from "./previewimg/previewimg.service";
+
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
 
@@ -46,6 +52,8 @@ import { TablesPipe } from './tables/tables.pipe';
     IndexAuthorityFormComponent,
     TablesComponent,
     CalendarComponent,
+    PreviewimgComponent,
+    CalendarComponent,
     TablesPipe
   ],
   imports: [
@@ -53,9 +61,6 @@ import { TablesPipe } from './tables/tables.pipe';
     IndexRoutingModule
   ],
   providers:[
-    NavService,
-    AuthorityService,
-    RoleService,
     TablesService
   ]
 })

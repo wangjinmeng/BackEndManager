@@ -1,22 +1,22 @@
-<share-box [toolCollapse]="false" [loading]="!roles">
+<share-box [toolCollapse]="false" [loading]="!users">
   <ng-container name='tool'>
     <a class="btn btn-sm btn-primary" (click)="add()">
       <i class="glyphicon glyphicon-plus"></i>
     </a>
   </ng-container>
-  <ng-container name="title">角色</ng-container>
+  <ng-container name="title">用户</ng-container>
   <ng-container name="body">
     <table class="table table-bordered">
       <tbody>
       <tr>
-        <th style="width: 15px">#</th>
+        <th style="width: 60px">头像</th>
         <th>名称</th>
         <th style="width: 90px">操作</th>
       </tr>
-      <ng-container *ngIf="roles">
-        <tr *ngFor="let item of roles;let i=index;" [class.bg-gray]="curEditId===item.id">
-          <td>
-            {{i+1}}
+      <ng-container *ngIf="users">
+        <tr *ngFor="let item of users;let i=index;" [class.bg-gray]="curEditId===item.id">
+          <td class="user-header">
+            <img [src]="item.img" class="img-circle" style="width: 50px">
           </td>
           <td>{{item.name}}</td>
           <td>

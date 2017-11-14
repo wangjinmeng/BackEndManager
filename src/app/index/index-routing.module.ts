@@ -8,8 +8,10 @@ import {IndexFormPageComponent} from "./index-form-page/index-form-page.componen
 import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.component";
 import {AnimationComponent} from "./animation/animation.component";
 import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
+import {IndexRoleComponent} from "./index-role/index-role.component";
 import {TablesComponent} from "./tables/tables.component";
 import {CalendarComponent} from "./calendar/calendar.component";
+import {IndexUserComponent} from "./index-user/index-user.component";
 import {IndexRoleComponent} from "./index-role/index-role.component";
 const routes: Routes = [
   { path: '',
@@ -25,6 +27,7 @@ const routes: Routes = [
         data: {
           path: 'general',
           name:'小部件',
+          style:'fa  fa-cubes',
           id:1
         }
       },
@@ -34,6 +37,7 @@ const routes: Routes = [
         data: {
           path: 'form',
           name:'表单',
+          style:'glyphicon glyphicon-list-alt',
           id:2
         }
       },
@@ -43,6 +47,7 @@ const routes: Routes = [
         data: {
           path: 'animation',
           name:'动画',
+          style:'glyphicon glyphicon-film ',
           id:3
         }
       },
@@ -64,6 +69,7 @@ const routes: Routes = [
           id:5
         }
       },
+
       {
         path:'tree',
         component:IndexTreePageComponent,

@@ -1,3 +1,15 @@
-<p>
-  index-user is work!!!
-</p>
+<div class="row">
+  <div class="col-lg-4 col-sm-12">
+    <index-user-list
+      [curEditId]="curEditId"
+      [users]="userList"
+      (editEvent)="edit($event)"
+      (addEvent)="add()"
+      (deleteEvent)="delete($event)">
+    </index-user-list>
+  </div>
+  <div class="col-lg-8 col-sm-12">
+    <index-user-form></index-user-form>
+  </div>
+</div>
+<app-previewimg></app-previewimg>

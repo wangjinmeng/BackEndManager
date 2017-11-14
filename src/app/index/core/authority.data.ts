@@ -1,5 +1,10 @@
-import {Injectable} from "@angular/core";
-const navData=[
+export class Authority{
+  name:string;
+  path:string;
+  style:string;
+  id?:number|string;
+}
+export const authorities:Authority[]=[
   {
     path: 'general',
     name:'小部件',
@@ -47,11 +52,11 @@ const navData=[
     name:'角色管理',
     style:'fa  fa-user',
     id:8
+  },
+  {
+    path: 'user',
+    name:'用户管理',
+    style:'fa fa-users',
+    id:9
   }
-];
-@Injectable()
-export class NavService{
-  getNavData(){
-    return navData;
-  }
-}
+]

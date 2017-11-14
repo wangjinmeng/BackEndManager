@@ -1,51 +1,9 @@
 import {Injectable} from "@angular/core";
-export class Authority{
-  name:string;
-  path:string;
-  style:string;
-  id?:number|string;
-}
+import {Authority, authorities} from "../authority.data";
 
 @Injectable()
 export class AuthorityService{
-  authorityArrs:Authority[]=[
-    {
-      path: 'general',
-      name:'小部件',
-      style:'fa  fa-cubes',
-      id:1
-    },
-    {
-      path: 'form',
-      name:'表单',
-      style:'glyphicon glyphicon-list-alt',
-      id:2
-    },
-    {
-      path: 'animation',
-      name:'动画',
-      style:'glyphicon glyphicon-film ',
-      id:3
-    },
-    {
-      path: 'tree',
-      name:'树',
-      style:'fa  fa-heartbeat',
-      id:4
-    },
-    {
-      path: 'authority',
-      name:'权限管理',
-      style:'glyphicon glyphicon-menu-hamburger',
-      id:5
-    },
-    {
-      path: 'role',
-      name:'角色管理',
-      style:'fa  fa-user',
-      id:6
-    }
-  ];
+  authorityArrs:Authority[]=authorities;
   count:number=this.authorityArrs.length+1;
   getId(){
     return this.count++;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthorityService, Authority} from "../core/service/authority.service";
+import {AuthorityService} from "../core/service/authority.service";
 import {RoleService, Role} from "../core/service/role.service";
+import {Authority} from "../core/authority.data";
 
 @Component({
   selector: 'app-index-role',

@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {Authority} from "../../core/service/authority.service";
+import {Authority} from "../../core/authority.data";
 
 @Component({
   selector: 'index-authority-list',

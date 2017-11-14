@@ -9,9 +9,9 @@
     <table class="table table-bordered">
       <tbody>
       <tr>
-        <th>图标</th>
+        <th style="width: 45px">图标</th>
         <th>名称</th>
-        <th>操作</th>
+        <th style="width: 90px">操作</th>
       </tr>
       <ng-container *ngIf="authorityList">
         <tr *ngFor="let item of authorityList;let i=index;" [class.bg-gray]="curEditId===item.id">

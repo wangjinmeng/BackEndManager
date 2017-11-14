@@ -5,7 +5,8 @@ import {Title} from "@angular/platform-browser";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import {NavService} from "../nav.service";
+import {NavService} from "../core/service/nav.service";
+// import {NavService} from "../nav.service";
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -31,9 +32,7 @@ export class IndexComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.navData=this.navService.getNavData();
-    this.tt.setTitle('123');
     this.setPage(this.routeInfo.snapshot.children[0].data);
-    console.log()
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.routeInfo)
@@ -45,7 +44,6 @@ export class IndexComponent implements OnInit {
       .mergeMap(route => route.data)                // 获取路由配置数据
       .subscribe((x)=>{
         this.setPage(x);
-        console.log(this.routeInfo.firstChild);
         this.routeInfo.fragment.subscribe(x=>{console.log(x)})
       });
 
@@ -58,10 +56,9 @@ export class IndexComponent implements OnInit {
     this.sidebarCollapse=!this.sidebarCollapse;
   }
   setPage(data){
-    console.log(data)
     this.curRouteId=data.id;
     this.pageTitle=data.name;
     this.ttIcon=data.style;
-    this.tt.setTitle(data.title)
+    this.tt.setTitle(data.name)
   }
 }
