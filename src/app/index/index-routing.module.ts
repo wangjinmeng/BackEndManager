@@ -9,6 +9,9 @@ import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.componen
 import {AnimationComponent} from "./animation/animation.component";
 import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
 import {IndexRoleComponent} from "./index-role/index-role.component";
+import {TablesComponent} from "./tables/tables.component";
+import {CalendarComponent} from "./calendar/calendar.component";
+
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -48,11 +51,31 @@ const routes: Routes = [
         }
       },
       {
+        path:'tables',
+        component:TablesComponent,
+        data: {
+          path: 'tables',
+          name:'表格',
+          id:4
+        }
+      },
+      {
+        path:'calendar',
+        component:CalendarComponent,
+        data: {
+          path: 'calendar',
+          name:'日期',
+          id:5
+        }
+      },
+
+      {
         path:'tree',
         component:IndexTreePageComponent,
         data: {
           path: 'tree',
           name:'树',
+          id:7
           style:'fa  fa-heartbeat',
           id:4
         }
@@ -64,7 +87,7 @@ const routes: Routes = [
           path: 'authority',
           name:'权限管理',
           style:'fa  fa-heartbeat',
-          id:5
+          id:8
         }
       },
       {
