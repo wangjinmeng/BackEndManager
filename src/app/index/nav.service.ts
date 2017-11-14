@@ -30,25 +30,22 @@ const navData=[
     style:'fa fa-calendar ',
     id:5
   },
-
-
   {
     path: 'tree',
     name:'树',
     style:'fa  fa-heartbeat',
-    id:7
+    id:6
   },
   {
     path: 'authority',
     name:'权限管理',
     style:'glyphicon glyphicon-menu-hamburger',
-    id:5
+    id:7
   },
   {
     path: 'role',
     name:'角色管理',
     style:'fa  fa-user',
-    id:6
     id:8
   }
 ];

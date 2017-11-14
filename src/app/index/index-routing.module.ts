@@ -75,9 +75,8 @@ const routes: Routes = [
         data: {
           path: 'tree',
           name:'树',
-          id:7
           style:'fa  fa-heartbeat',
-          id:4
+          id:6
         }
       },
       {
@@ -87,7 +86,7 @@ const routes: Routes = [
           path: 'authority',
           name:'权限管理',
           style:'fa  fa-heartbeat',
-          id:8
+          id:7
         }
       },
       {
@@ -97,7 +96,7 @@ const routes: Routes = [
           path: 'role',
           name:'角色管理',
           style:'fa  fa-user',
-          id:6
+          id:8
         }
       },
       {path:'',redirectTo:'general',pathMatch:'full'}

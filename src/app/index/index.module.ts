@@ -40,11 +40,10 @@ import { CalendarComponent } from './calendar/calendar.component';
     IndexAuthorityFormComponent,
     IndexRoleComponent,
     IndexRoleListComponent,
-    IndexRoleFormComponent
+    IndexRoleFormComponent,
     IndexAuthorityFormComponent,
     TablesComponent,
-    CalendarComponent,
-
+    CalendarComponent
   ],
   imports: [
     ShareModule,
