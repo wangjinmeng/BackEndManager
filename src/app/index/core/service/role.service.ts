@@ -10,7 +10,7 @@ export class RoleService{
     {
       id:'1',
       name:'超级管理员',
-      authorityIds:['1','2','3','4','5']
+      authorityIds:['1','2','3','4','5','6']
     },
     {
       id:'2',

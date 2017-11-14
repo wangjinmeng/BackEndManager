@@ -19,6 +19,7 @@ export class IndexComponent implements OnInit {
   userName:string;
   userImg:string;
   pageTitle:string;
+  ttIcon:string
   curRouteId;
   navData;
   curRouter:string;
@@ -57,8 +58,10 @@ export class IndexComponent implements OnInit {
     this.sidebarCollapse=!this.sidebarCollapse;
   }
   setPage(data){
+    console.log(data)
     this.curRouteId=data.id;
     this.pageTitle=data.name;
+    this.ttIcon=data.style;
     this.tt.setTitle(data.title)
   }
 }

@@ -8,7 +8,13 @@
       (editEvent)="edit($event)"></index-role-list>
   </div>
   <div class="col-lg-8 col-sm-12">
-    <index-role-form [authorities]="authorities" [role]="curRole" (cancelEvent)="cancel()" (submitEvent)="submit($event)"></index-role-form>
+    <index-role-form
+      [authorities]="authorities"
+      [formTitle]="formTitle"
+      [role]="curRole"
+      (cancelEvent)="cancel()"
+      (submitEvent)="submit($event)" >
+    </index-role-form>
   </div>
 </div>
 <div class="row" [hidden]="true">

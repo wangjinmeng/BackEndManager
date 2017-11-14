@@ -15,6 +15,7 @@ export class IndexFormPageComponent implements OnInit {
         value:'wjm',
         label:'名字',
         key:'name',
+        disabled:true,
         limit:{
           required:true,
           minLength:6,

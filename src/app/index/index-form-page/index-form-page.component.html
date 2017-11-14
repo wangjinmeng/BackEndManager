@@ -99,9 +99,16 @@
   &lt;/ng-container&gt;
 &lt;/share-form-box&gt;
           </pre>
-            <p>
+          <p>
               主要原理就是将一个[name="form-btn"] 的元素的内容放入插件内部的插槽中,以保证布局的统一性，实际的效果就是最上面表单的提交和取消按钮
             </p>
+        </dd>
+        <dt>禁用</dt>
+        <dd>
+          <p>通过一个disabled就可以禁用一个表单，例如最上面的例子中name属性被禁用了,整个表单的值也不会出现name属性</p>
+          <pre>
+ {{formData[0]|json}}
+          </pre>
         </dd>
       </dl>
     </ng-container>

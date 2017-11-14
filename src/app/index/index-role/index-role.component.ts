@@ -12,6 +12,7 @@ export class IndexRoleComponent implements OnInit {
   curRole;
   curEditId:string;
   curMethod:number=0;//0:添加；1:编辑
+  formTitle:string='添加';
   constructor(
     private authService:AuthorityService,
     private roleService:RoleService
@@ -22,6 +23,7 @@ export class IndexRoleComponent implements OnInit {
   }
   add(){
     this.curMethod=0;
+    this.formTitle='添加';
     this.curRole={
       id:'',
       name:'',
@@ -31,6 +33,7 @@ export class IndexRoleComponent implements OnInit {
   }
   edit(item){
     this.curMethod=1;
+    this.formTitle='编辑';
     this.curRole=item;
     this.curEditId=item.id;
   }

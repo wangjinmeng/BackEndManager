@@ -23,6 +23,7 @@ const routes: Routes = [
         data: {
           path: 'general',
           name:'小部件',
+          style:'fa  fa-cubes',
           id:1
         }
       },
@@ -32,6 +33,7 @@ const routes: Routes = [
         data: {
           path: 'form',
           name:'表单',
+          style:'glyphicon glyphicon-list-alt',
           id:2
         }
       },
@@ -41,6 +43,7 @@ const routes: Routes = [
         data: {
           path: 'animation',
           name:'动画',
+          style:'glyphicon glyphicon-film ',
           id:3
         }
       },
@@ -50,6 +53,7 @@ const routes: Routes = [
         data: {
           path: 'tree',
           name:'树',
+          style:'fa  fa-heartbeat',
           id:4
         }
       },
