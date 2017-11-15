@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TablesService {
   private tableList:TableList[]=[
-       new TableList(1,"John Doe","11-7-2014","Approved","Approved"),
-       new TableList(2,"Alexander Pierce","11-7-2015","Approved","Approved"),
-       new TableList(3,"Bob Doe","11-7-2016","Approved","Approved"),
-       new TableList(4,"Mike Doe","11-7-2017","Approved","Approved"),
+       new TableList(1,"John","11-7-2014","Approved","Approved"),
+       new TableList(2,"Alexander","11-7-2015","Pending","Approved"),
+       new TableList(3,"Bob","11-7-2016","Approved","Approved"),
+       new TableList(4,"Mike","11-7-2017","Denied","Approved"),
   ];
   constructor() { }
    getTableList():TableList[]{

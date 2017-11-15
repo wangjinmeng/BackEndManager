@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Authority, authorities} from "../authority.data";
+import {authorities, Authority} from "../authority.data";
 
 @Injectable()
 export class AuthorityService{

@@ -13,11 +13,22 @@ export class TablesComponent implements OnInit {
   private tableList:Array<TableList>;
   private tableIdFilter:FormControl=new FormControl();
   private keyword:string;
-  constructor(private tableListService:TablesService) { }
+
+   changeStatus={
+      "Approved":"success",
+      "Pending":"warning",
+      "Denied":"danger"
+  };
+  constructor(private tableListService:TablesService) {  }
 
   ngOnInit() {
-     this.tableList=this.tableListService.getTableList();
-     this.tableIdFilter.valueChanges.debounceTime(500).subscribe(value => this.keyword = value )
-  }
 
+     this.tableList=this.tableListService.getTableList();
+     this.tableIdFilter.valueChanges.debounceTime(500).subscribe(value => this.keyword = value );
+     this.ngOnChanges();
+
+  }
+  ngOnChanges(): void {
+
+  }
 }
