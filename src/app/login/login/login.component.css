@@ -1,7 +1,19 @@
-.login-page{
+.my-login-page{
   width:100%;
   position: absolute;
   top:0;
   bottom:0;
-  background: #d2d6de;
+  /*background: #d2d6de;*/
+}
+.my-login-page-bg{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  overflow: hidden;
+  z-index: -1;
+}
+.my-login-page-bg>img{
+  width: 100%;
 }

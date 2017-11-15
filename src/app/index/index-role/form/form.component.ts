@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild, Output, Input, EventEmitter} from '@angular/core';
 import {ShareFormBoxComponent} from "../../../share/component/share-form-box/share-form-box.component";
 import {FormHidden, FormText, FormBase, FormCheck} from "../../../share/formDataModel/formDataModel";
-import {Authority} from "../../core/service/authority.service";
 import {Role} from "../../core/service/role.service";
 import {FormBuilder} from "@angular/forms";
+import {Authority} from "../../core/authority.data";
 
 @Component({
   selector: 'index-role-form',

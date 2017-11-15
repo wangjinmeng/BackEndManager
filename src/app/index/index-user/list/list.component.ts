@@ -11,10 +11,7 @@ export class IndexUserListComponent implements OnInit,OnChanges{
   @Output() deleteEvent=new EventEmitter()
   constructor() { }
   ngOnInit() {}
-  ngOnChanges(){
-    console.log(this.users)
-  }
-
+  ngOnChanges(){}
   add(){
     this.addEvent.emit()
   }

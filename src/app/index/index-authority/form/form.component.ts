@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild, Input, Output, EventEmitter, OnChanges} from '@angular/core';
 import {FormText, FormHidden} from "../../../share/formDataModel/formDataModel";
 import {ShareFormBoxComponent} from "../../../share/component/share-form-box/share-form-box.component";
-import {Authority} from "../../core/service/authority.service";
+import {Authority} from "../../core/authority.data";
 
 @Component({
   selector: 'index-authority-form',

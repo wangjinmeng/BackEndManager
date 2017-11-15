@@ -7,7 +7,9 @@ import {Component, Input, OnChanges, Output, EventEmitter, OnInit} from '@angula
 export class SharePageBarComponent implements OnInit {
   @Input() curPage:number=1;
   @Input() totalPage:number=1;
+  @Input() size:string='normal';//normal s
   @Output() changePage=new EventEmitter();
+  classes:string;//
   maxLen=5;
   pageArr:any[];
   constructor() {}
@@ -19,8 +21,8 @@ export class SharePageBarComponent implements OnInit {
   ngOnInit(): void {
     this.ngOnChanges()
   }
-
   ngOnChanges(): void {
+    this.classes=this.size=='s'?'pagination pagination-sm no-margin':'pagination';
     this.pageArr=[];
     if(this.totalPage<=this.maxLen){
       for(let i=0;i<this.totalPage;i++){

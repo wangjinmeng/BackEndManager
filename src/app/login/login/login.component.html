@@ -1,47 +1,55 @@
-<div class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    后台管理系统
+<div class="hold-transition my-login-page">
+  <div class="login-box">
+    <!--<div class="login-logo">-->
+      <!--后台管理系统-->
+    <!--</div>-->
+    <!-- /.login-logo -->
+    <share-box [toolCollapse]="false" [styleTheme]="1">
+      <ng-container name="title">
+          后台管理系统
+      </ng-container>
+      <div class="login-box-body" name="body">
+      <!--<p class="login-box-msg">欢迎使用！！！</p>-->
+      <form [formGroup]="loginForm">
+        <div class="form-group has-feedback"  [class.has-error]="(name.dirty||name.touched)&&!name.valid">
+          <input class="form-control" placeholder="userName" type="text" formControlName="name">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          <div class="bg-red disabled color-palette" [hidden]="(name.pristine&&name.untouched)||name.valid">
+            <ng-container *ngIf="name.hasError('required')">
+              请输入用户名
+            </ng-container>
+            <ng-container *ngIf="name.hasError('minlength')">
+              至少输入{{name.getError('minlength').requiredLength}}个字符
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group has-feedback" [class.has-error]="(password.dirty||password.touched)&&!password.valid">
+          <input class="form-control" placeholder="Password" type="password"  formControlName="password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <div  class="bg-red disabled color-palette"  [hidden]="(password.pristine&&password.untouched)||password.valid">
+            <ng-container *ngIf="password.hasError('required')">
+              请输入密码
+            </ng-container>
+            <ng-container *ngIf="password.hasError('minlength')">
+              至少输入{{password.getError('minlength').requiredLength}}个字符
+            </ng-container>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-flat" (click)="validPassword()" [disabled]="!loginForm.valid">登陆</button>
+        <div class="row">
+          <div class="col-xs-6 ">
+            <a href="javascript:;" (click)="forgetPassword()" >忘记密码</a>
+          </div>
+          <div class="col-xs-6 text-right">
+            <a href="javascript:;" (click)="registerUser()" >注册一个新用户</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    </share-box>
   </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg"></p>
-    <form [formGroup]="loginForm">
-      <div class="form-group has-feedback"  [class.has-error]="(name.dirty||name.touched)&&!name.valid">
-        <input class="form-control" placeholder="userName" type="text" formControlName="name">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-        <div class="bg-red disabled color-palette" [hidden]="(name.pristine&&name.untouched)||name.valid">
-          <ng-container *ngIf="name.hasError('required')">
-            请输入用户名
-          </ng-container>
-          <ng-container *ngIf="name.hasError('minlength')">
-            至少输入{{name.getError('minlength').requiredLength}}个字符
-          </ng-container>
-        </div>
-      </div>
-      <div class="form-group has-feedback" [class.has-error]="(password.dirty||password.touched)&&!password.valid">
-        <input class="form-control" placeholder="Password" type="password"  formControlName="password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        <div  class="bg-red disabled color-palette"  [hidden]="(password.pristine&&password.untouched)||password.valid">
-          <ng-container *ngIf="password.hasError('required')">
-            请输入密码
-          </ng-container>
-          <ng-container *ngIf="password.hasError('minlength')">
-            至少输入{{password.getError('minlength').requiredLength}}个字符
-          </ng-container>
-        </div>
-      </div>
-      <button class="btn btn-primary btn-block btn-flat" (click)="validPassword()" [disabled]="!loginForm.valid">登陆</button>
-      <div class="row">
-        <div class="col-xs-6 ">
-          <a href="javascript:;" (click)="forgetPassword()" >忘记密码</a>
-        </div>
-        <div class="col-xs-6 text-right">
-          <a href="javascript:;" (click)="registerUser()" >注册一个新用户</a>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 <!-- /.login-box -->
+</div>
+<div class="my-login-page-bg">
+  <img src="assets/img/login-bg-02.jpg">
 </div>

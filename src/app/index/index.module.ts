@@ -25,6 +25,7 @@ import {IndexUserFormComponent} from "./index-user/form/form.component";
 
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
+import {IndexCoreModule} from "./core/index.core.module";
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { TablesPipe } from './tables/tables.pipe';
   ],
   imports: [
     ShareModule,
+    IndexCoreModule,
     IndexRoutingModule
   ],
   providers:[

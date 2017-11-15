@@ -10,7 +10,6 @@ export class ShareBoxComponent implements OnInit,OnChanges {
   @Input() styleSolid:boolean=false;
   @Input() styleCollapsed:boolean=false;
   @Input() styleTheme:number=0;
-
   @Output() eventCollapse=new EventEmitter();
   @Output() eventRemove=new EventEmitter();
   themeArr=['default','primary','success','warning','danger'];

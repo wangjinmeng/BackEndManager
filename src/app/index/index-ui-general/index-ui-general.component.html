@@ -355,8 +355,40 @@
   <share-box [styleSolid]="true">
     <ng-container name="title">share-page-bar</ng-container>
     <ng-container name="body">
+      <div class="col-xs-12">
+        <h3>
+          使用方法
+        </h3>
+        <dl>
+          <dt>插件名称</dt>
+          <dd>share-page-bar</dd>
+          <dt>输入型参数:</dt>
+          <dd>
+            <p>
+              curPage、totalPage、size
+            </p>
+            curPage(必传):当前页码 number类型
+            <br>
+            totalPage(必传):页码综述 number类型
+            <br>
+            size(选传):分页大小 string类型 不传时默认大小，还有另外一个可传值's'
+          </dd>
+          <dt>输出型参数:</dt>
+          <dd>
+            <p>
+              changePage
+            </p>
+            这是一个输出型属性，可以通过这个属性会获得一个参数当前点击的页码
+          </dd>
+          <dt>具体使用方法:</dt>
+          <dd>
+            <p>不要忘记在主组件中定义change()函数哦</p>
+            <pre>&lt;share-page-bar curPage=&quot;1&quot; totalPage=&quot;3&quot; (changePage)=&quot;change($event)&quot;&gt;&lt;/share-page-bar&gt;</pre>
+          </dd>
+        </dl>
+      </div>
       <div class="col-xs-3">
-      <share-page-bar curPage="1" totalPage="3"></share-page-bar>
+      <share-page-bar curPage="1" totalPage="3" (changePage)="change($event)"></share-page-bar>
       </div>
       <div class="col-xs-3">
       <share-page-bar curPage="1" totalPage="5"></share-page-bar>

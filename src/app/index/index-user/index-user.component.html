@@ -9,6 +9,6 @@
     </index-user-list>
   </div>
   <div class="col-lg-8 col-sm-12">
-    <index-user-form></index-user-form>
+    <index-user-form [roles]="roles" [formTitle]="formTitle" [user]="curUser" (cancelEvent)="cancel()" (submitEvent)="submit($event)"></index-user-form>
   </div>
 </div>

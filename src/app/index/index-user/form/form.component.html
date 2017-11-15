@@ -1,3 +1,16 @@
-<p>
-  index-user-work is work!!!
-</p>
+<share-box [toolCollapse]="false">
+  <ng-container name="title">操作</ng-container>
+  <ng-container name="body">
+    <share-form-box [formData]="formData">
+      <ng-container name="form-btn">
+        <button type="button" class="btn  btn-primary" [disabled]="!formGroup.valid" (click)="submit()">
+          提交
+        </button>
+        <button type="button" class="btn  btn-default" (click)="cancel()">
+          取消
+        </button>
+      </ng-container>
+    </share-form-box>
+    {{formGroup.value|json}}
+  </ng-container>
+</share-box>

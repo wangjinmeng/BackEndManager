@@ -12,7 +12,6 @@ import {IndexRoleComponent} from "./index-role/index-role.component";
 import {TablesComponent} from "./tables/tables.component";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {IndexUserComponent} from "./index-user/index-user.component";
-import {IndexRoleComponent} from "./index-role/index-role.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -98,6 +97,16 @@ const routes: Routes = [
           name:'角色管理',
           style:'fa  fa-user',
           id:8
+        }
+      },
+      {
+        path:'user',
+        component:IndexUserComponent,
+        data:   {
+          path: 'user',
+          name:'用户管理',
+          style:'fa  fa-user',
+          id:9
         }
       },
       {path:'',redirectTo:'general',pathMatch:'full'}
