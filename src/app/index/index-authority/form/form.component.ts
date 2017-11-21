@@ -43,7 +43,7 @@ export class IndexAuthorityFormComponent implements OnInit{
         }
       })
     ];
-  loadingFlag:boolean=false;
+  loadingFlag:boolean=true;
   @ViewChild(ShareFormBoxComponent)
   private formBoxComponent: ShareFormBoxComponent;
   get formGroup(){
@@ -57,15 +57,19 @@ export class IndexAuthorityFormComponent implements OnInit{
   ngOnInit() {
     this.curId = this.route.snapshot.paramMap.get('id');
     this.curMethod = this.route.snapshot.paramMap.get('method');
-    console.log(this.curMethod);
     if(this.curId){
-      this.authorityData=this.authService.getById(this.curId);
+      this.authService.getById(this.curId).then(
+        (data)=>{
+          this.authorityData=data;
+          this.reset(this.authorityData.arr);
+          this.loadingFlag=false;
+        }
+      );
     }else{
       this.authorityData={};
+      this.reset({});
+      this.loadingFlag=false;
     }
-    setTimeout(()=>{
-      this.reset(this.authorityData.arr)
-    },300)
   }
   reset(data){
     if(this.formGroup){
@@ -75,16 +79,20 @@ export class IndexAuthorityFormComponent implements OnInit{
   submit(){
     this.loadingFlag=true;
     if(this.curMethod==1){
-      this.authService.edit(this.formGroup.value)
+      this.authService.edit(this.formGroup.value).then(()=>{
+        this.back()
+      })
     }else{
-      this.authService.add(this.formGroup.value)
+      this.authService.add(this.formGroup.value).then(()=>{
+        this.back()
+      })
     }
-    this.back();
   }
   cancel(){
-    this.reset({});
+    this.back()
   }
   back(){
+    this.loadingFlag=false;
     if(this.curMethod==1){
       this.router.navigate(['../',{id:this.curId}],{relativeTo: this.route})
     }else{

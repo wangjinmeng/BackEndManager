@@ -11,32 +11,59 @@ export class AuthorityService{
   get(){
     return this.authorityArrs;
   }
-  getById(id){
+  getIndex(id){
     let index=0;
-    let arr;
     this.authorityArrs.find((a,i)=>{
       if(a.id==id){
-        arr=a;
         index=i;
         return true
       }
       return false
     });
-    return {index:index,arr:arr}
+    return index
+  }
+  getById(id){
+    return new Promise((resolve,reject)=>{
+      let index=0;
+      let arr;
+      this.authorityArrs.find((a,i)=>{
+        if(a.id==id){
+          arr=a;
+          index=i;
+          return true
+        }
+        return false
+      });
+      setTimeout(()=>{
+        resolve({index:index,arr:arr});
+        },3000)
+    })
   }
   add(data){
-    data.id=this.getId();
-    this.authorityArrs.push(data);
-    return true;
+    return new Promise((resolve,reject)=>{
+      data.id=this.getId();
+      this.authorityArrs.push(data);
+      setTimeout(()=>{
+        resolve(true)
+      },3000)
+    })
   }
   edit(data){
-    let index=this.getById(data.id).index;
-    this.authorityArrs[index]=data
-    return true
+    return new Promise((resolve,reject)=>{
+      let index=this.getIndex(data.id);
+      this.authorityArrs[index]=data;
+      setTimeout(()=>{
+        resolve(true)
+      },3000);
+    })
   }
   delete(id){
-    let index=this.getById(id).index;
-    this.authorityArrs.splice(index,1)
-    return true;
+    return new Promise((resolve,reject)=>{
+      let index=this.getIndex(id);
+      this.authorityArrs.splice(index,1)
+      setTimeout(()=>{
+        resolve(true)
+      },3000);
+    });
   }
 }

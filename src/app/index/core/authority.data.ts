@@ -58,5 +58,10 @@ export const authorities:Authority[]=[
     name:'用户管理',
     style:'fa fa-users',
     id:9
+  },{
+    path: 'tab',
+    name:'选项卡',
+    style:'fa  fa-heartbeat',
+    id:10
   }
 ]

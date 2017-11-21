@@ -108,6 +108,16 @@ const routes: Routes = [
           id:9
         }
       },
+      {
+        path:'tab',
+        data:   {
+          path: 'tab',
+          name:'选项卡',
+          style:'fa  fa-heartbeat',
+          id:10
+        },
+        loadChildren:'app/index/index-tab/index-tab.module#IndexTabModule'
+      },
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
   }

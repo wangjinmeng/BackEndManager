@@ -7,6 +7,8 @@ import {IndexAuthorityFormComponent} from "./form/form.component";
 import {RouterModule} from "@angular/router";
 import {ModalModule, ComponentLoaderFactory, PositioningService} from "ngx-bootstrap";
 import {BsModalService} from "ngx-bootstrap";
+import {IndexAuthorityLoadingComponent} from './loading/loading.component';
+import {IndexAuthoritySuccessComponent} from './success/success.component';
 @NgModule({
   providers:[
     BsModalService,
@@ -31,7 +33,10 @@ import {BsModalService} from "ngx-bootstrap";
   declarations:[
     IndexAuthorityComponent,
     IndexAuthorityListComponent,
-    IndexAuthorityFormComponent
-  ]
+    IndexAuthorityFormComponent,
+    IndexAuthorityLoadingComponent,
+    IndexAuthoritySuccessComponent
+  ],
+  entryComponents:[IndexAuthorityLoadingComponent,IndexAuthoritySuccessComponent]
 })
 export class IndexAuthorityModule{}

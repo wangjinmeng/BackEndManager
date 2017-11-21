@@ -3,6 +3,8 @@ import {Authority} from "../../core/authority.data";
 import {AuthorityService} from "../../core/service/authority.service";
 import {Router, ActivatedRoute} from "@angular/router";
 import {BsModalService, BsModalRef} from "ngx-bootstrap";
+import {IndexAuthorityLoadingComponent} from "../loading/loading.component";
+import {IndexAuthoritySuccessComponent} from "../success/success.component";
 
 @Component({
   selector: 'index-authority-list',
@@ -32,15 +34,20 @@ export class IndexAuthorityListComponent implements OnInit {
   delete(id,template){
     this.deleteId=id;
     this.bsModalRef=this.modalService.show(template);
-    //
   }
   edit(id){
     this.router.navigate(['form', {method:1,id:id}],{relativeTo: this.route})
   }
   confirm(){
     this.deleteId='';
-    this.authService.delete(this.deleteId);
-    this.bsModalRef.hide()
+    this.bsModalRef.hide();
+    this.bsModalRef = this.modalService.show(IndexAuthorityLoadingComponent);
+    this.authService.delete(this.deleteId).then(()=>{
+      this.bsModalRef.hide();
+      this.bsModalRef = this.modalService.show(IndexAuthoritySuccessComponent);
+      setTimeout(()=>{
+      },3000)
+    });
   }
   decline(){
     this.deleteId='';
