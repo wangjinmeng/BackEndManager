@@ -68,7 +68,6 @@ const routes: Routes = [
           id:5
         }
       },
-
       {
         path:'tree',
         component:IndexTreePageComponent,
@@ -81,13 +80,13 @@ const routes: Routes = [
       },
       {
         path:'authority',
-        component:IndexAuthorityComponent,
         data:   {
           path: 'authority',
           name:'权限管理',
           style:'fa  fa-heartbeat',
           id:7
-        }
+        },
+        loadChildren:'app/index/index-authority/index-authority.module#IndexAuthorityModule'
       },
       {
         path:'role',

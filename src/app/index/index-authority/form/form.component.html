@@ -1,5 +1,7 @@
 <share-box [toolCollapse]="false" [styleTheme]="1" [loading]="loadingFlag">
-  <ng-container name="title">{{formTitle}}</ng-container>
+  <ng-container name="title">
+    <button class="btn  btn-primary" (click)="back()">返回</button>
+  </ng-container>
   <ng-container name="body">
     <share-form-box [formData]="formData">
       <ng-container name="form-btn">

@@ -1,17 +1,18 @@
-import {Component, OnInit, ViewChild, Input, Output, EventEmitter, OnChanges} from '@angular/core';
+import {Component, OnInit, ViewChild, Input,  OnChanges} from '@angular/core';
 import {FormText, FormHidden} from "../../../share/formDataModel/formDataModel";
 import {ShareFormBoxComponent} from "../../../share/component/share-form-box/share-form-box.component";
 import {Authority} from "../../core/authority.data";
-
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
+import {AuthorityService} from "../../core/service/authority.service";
+import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'index-authority-form',
   templateUrl: './form.component.html'
 })
-export class IndexAuthorityFormComponent implements OnInit,OnChanges{
-  @Input() authorityData:Authority;
-  @Input() formTitle='操作';
-  @Output() submitEvent=new EventEmitter();
-  @Output() cancelEvent=new EventEmitter();
+export class IndexAuthorityFormComponent implements OnInit{
+  authorityData;
+  curId;
+  curMethod;
   formData= [
       new FormHidden({
         value:'',
@@ -48,10 +49,23 @@ export class IndexAuthorityFormComponent implements OnInit,OnChanges{
   get formGroup(){
     return this.formBoxComponent.formGroup;
   }
-  constructor() { }
-  ngOnInit() {}
-  ngOnChanges(){
-    this.reset(this.authorityData)
+  constructor(
+    private authService:AuthorityService,
+    private router:Router,
+    private route:ActivatedRoute
+  ) { }
+  ngOnInit() {
+    this.curId = this.route.snapshot.paramMap.get('id');
+    this.curMethod = this.route.snapshot.paramMap.get('method');
+    console.log(this.curMethod);
+    if(this.curId){
+      this.authorityData=this.authService.getById(this.curId);
+    }else{
+      this.authorityData={};
+    }
+    setTimeout(()=>{
+      this.reset(this.authorityData.arr)
+    },300)
   }
   reset(data){
     if(this.formGroup){
@@ -60,12 +74,21 @@ export class IndexAuthorityFormComponent implements OnInit,OnChanges{
   }
   submit(){
     this.loadingFlag=true;
-    this.submitEvent.emit(this.formGroup.value);
-    this.formGroup.reset();
-    this.loadingFlag=false;
+    if(this.curMethod==1){
+      this.authService.edit(this.formGroup.value)
+    }else{
+      this.authService.add(this.formGroup.value)
+    }
+    this.back();
   }
   cancel(){
     this.reset({});
-    this.cancelEvent.emit();
+  }
+  back(){
+    if(this.curMethod==1){
+      this.router.navigate(['../',{id:this.curId}],{relativeTo: this.route})
+    }else{
+      this.router.navigate(['../',{id:''}],{relativeTo: this.route})
+    }
   }
 }

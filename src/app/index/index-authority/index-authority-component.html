@@ -1,19 +1,24 @@
-<div class="row">
-  <div class="col-lg-4 col-sm-12">
-    <index-authority-list
-      [curEditId]="curEditId"
-      [authorityList]="authorityList"
-      (addEvent)="add()"
-      (deleteEvent)="delete($event)"
-      (editEvent)="edit($event)"></index-authority-list>
+<!--<div class="row">
+  <div class="col-lg-12 col-sm-12">
+    &lt;!&ndash;<index-authority-list&ndash;&gt;
+      &lt;!&ndash;[curEditId]="curEditId"&ndash;&gt;
+      &lt;!&ndash;[authorityList]="authorityList"&ndash;&gt;
+      &lt;!&ndash;(addEvent)="add()"&ndash;&gt;
+      &lt;!&ndash;(deleteEvent)="delete($event)"&ndash;&gt;
+      &lt;!&ndash;(editEvent)="edit($event)"></index-authority-list>&ndash;&gt;
   </div>
-  <div class="col-lg-8 col-sm-12">
-    <index-authority-form
+  <div class="col-lg-12 col-sm-12">
+&lt;!&ndash;    <index-authority-form
       (submitEvent)="submitForm($event)"
-      [authorityData]="curEditAuthority" [formTitle]="formTitle" (cancelEvent)="cancelForm()"></index-authority-form>
+      [authorityData]="curEditAuthority" [formTitle]="formTitle" (cancelEvent)="cancelForm()"></index-authority-form>&ndash;&gt;
+  </div>
+</div>-->
+<div class="row">
+  <div class="col-xs-12">
+    <router-outlet></router-outlet>
   </div>
 </div>
-<div class="row">
+<!--<div class="row">
   <div class="col-sm-12">
     <share-box [styleSolid]="true" [styleTheme]="4">
       <ng-container name="title">TODO</ng-container>
@@ -29,4 +34,4 @@
       </ng-container>
     </share-box>
   </div>
-</div>
+</div>-->

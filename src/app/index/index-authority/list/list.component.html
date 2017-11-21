@@ -14,16 +14,16 @@
         <th style="width: 90px">操作</th>
       </tr>
       <ng-container *ngIf="authorityList">
-        <tr *ngFor="let item of authorityList;let i=index;" [class.bg-gray]="curEditId===item.id">
+        <tr *ngFor="let item of authorityList;let i=index;" [class.bg-gray]="curEditId==item.id">
           <td>
             <i [class]="item.style"></i>
           </td>
           <td>{{item.name}}</td>
           <td>
-            <a type="button" class="btn  btn-success  btn-sm" (click)="edit(item)">
+            <a type="button" class="btn  btn-success  btn-sm" (click)="edit(item.id)">
               <i class="glyphicon glyphicon-pencil"></i>
             </a>
-            <a type="button" class="btn  btn-danger btn-sm" (click)="delete(item.id)">
+            <a type="button" class="btn  btn-danger btn-sm" (click)="delete(item.id,template)">
               <i class="glyphicon glyphicon-trash"></i>
             </a>
           </td>
@@ -33,3 +33,11 @@
     </table>
   </ng-container>
 </share-box>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>你确定删除这条信息吗？删除操作无法恢复</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

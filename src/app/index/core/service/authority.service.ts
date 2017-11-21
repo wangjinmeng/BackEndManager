@@ -15,7 +15,7 @@ export class AuthorityService{
     let index=0;
     let arr;
     this.authorityArrs.find((a,i)=>{
-      if(a.id===id){
+      if(a.id==id){
         arr=a;
         index=i;
         return true
