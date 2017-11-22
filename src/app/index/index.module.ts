@@ -21,6 +21,7 @@ import {IndexUserFormComponent} from "./index-user/form/form.component";
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
 import {IndexCoreModule} from "./core/index.core.module";
+import { IndexDatepickerComponent } from './index-datepicker/index-datepicker.component';
 
 
 @NgModule({

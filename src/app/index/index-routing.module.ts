@@ -118,6 +118,26 @@ const routes: Routes = [
         },
         loadChildren:'app/index/index-tab/index-tab.module#IndexTabModule'
       },
+      {
+        path:'datepicker',
+        data:   {
+          path: 'datepicker',
+          name:'日期选择器',
+          style:'fa  fa-heartbeat',
+          id:11
+        },
+        loadChildren:'app/index/index-datepicker/index-datepicker.module#IndexDatepickerModule'
+      },
+      {
+        path:'modals',
+        data:   {
+          path: 'modals',
+          name:'弹出层',
+          style:'fa  fa-heartbeat',
+          id:12
+        },
+        loadChildren:'app/index/index-modals/index-modals.module#IndexModalsModule'
+      },
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
   }

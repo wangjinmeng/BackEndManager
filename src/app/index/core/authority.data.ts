@@ -63,5 +63,17 @@ export const authorities:Authority[]=[
     name:'选项卡',
     style:'fa  fa-heartbeat',
     id:10
+  },
+  {
+    path: 'datepicker',
+    name:'日期选择器',
+    style:'fa  fa-heartbeat',
+    id:11
+  },
+  {
+    path: 'modals',
+    name:'弹出层',
+    style:'fa  fa-heartbeat',
+    id:12
   }
 ]
