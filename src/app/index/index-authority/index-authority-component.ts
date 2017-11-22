@@ -7,20 +7,10 @@ import {Authority} from "../core/authority.data";
 export class IndexAuthorityComponent implements OnInit{
   constructor(private authService:AuthorityService){}
   curEditId;
-  authorityList:Authority[];
   curEditAuthority:Authority;
   curMethod:number=0;//0:添加；1:编辑
   formTitle:string="添加";
-  ngOnInit(): void {
-    this.getAuthorityList();
-  }
-  getAuthorityList(){
-    this.authorityList=this.authService.get();
-  }
-  delete(id){
-    console.log(id);
-    this.authService.delete(id);
-  }
+  ngOnInit(): void {}
   edit(item){
     this.formTitle=`编辑>${item.name}`;
     this.curMethod=1;

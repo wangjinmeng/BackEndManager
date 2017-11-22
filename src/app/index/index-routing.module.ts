@@ -68,7 +68,6 @@ const routes: Routes = [
           id:5
         }
       },
-
       {
         path:'tree',
         component:IndexTreePageComponent,
@@ -81,13 +80,13 @@ const routes: Routes = [
       },
       {
         path:'authority',
-        component:IndexAuthorityComponent,
         data:   {
           path: 'authority',
           name:'权限管理',
           style:'fa  fa-heartbeat',
           id:7
-        }
+        },
+        loadChildren:'app/index/index-authority/index-authority.module#IndexAuthorityModule'
       },
       {
         path:'role',
@@ -108,6 +107,16 @@ const routes: Routes = [
           style:'fa  fa-user',
           id:9
         }
+      },
+      {
+        path:'tab',
+        data:   {
+          path: 'tab',
+          name:'选项卡',
+          style:'fa  fa-heartbeat',
+          id:10
+        },
+        loadChildren:'app/index/index-tab/index-tab.module#IndexTabModule'
       },
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
