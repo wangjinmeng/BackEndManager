@@ -2,34 +2,12 @@
  * Created by OJH on 2017/11/22.
  */
 
-var client = require("./client");
-
-var express = require("express");
-
-var app = express();
-
+var app = require("./appServer");
 app.get('/', function (req, res) {
-   res.send('Hello World!');
+  res.send('欢迎使用angular');
 });
 
-app.get("/getUser", function(req, res){
-  var query = req.query;
-  console.info("接收参数：" + JSON.stringify(req.params));
-  client(function(db){
-     var userCollection = db.collection("user");
-     userCollection.find({name: query.userName}).toArray(function(err, result){
-       if(err){
-         console.error("读取数据失败：" + err);
-         res.send(err);
-         return;
-       }
-       res.send(result);
-     });
-
-  });
-
-});
-
+require("./user");
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
