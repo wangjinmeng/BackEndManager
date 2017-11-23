@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {LoginService} from "../../core/service/login/login.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   userName:string;
   userPassword:string;
   loginForm:FormGroup;
-  constructor(private loginService:LoginService,  private router: Router) {
+  constructor(private loginService:LoginService,  private router: Router,private http:HttpClient) {
     this.loginForm=new FormGroup({
       name:new FormControl('',[Validators.required,Validators.minLength(3)]),
       password:new FormControl('',[Validators.required,Validators.minLength(3)])
@@ -24,7 +25,12 @@ export class LoginComponent implements OnInit {
   get password(){
     return this.loginForm.get('password')
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.http.get('localhost:3000/getUser?userName=user1').subscribe(data => {
+      // Read the result field from the JSON response.
+      console.log(data);
+    });
+  }
   validPassword(){
     this.loginService.validPassword(this.name.value,this.password.value).then((param)=>{
       this.router.navigate(['/index',param]);
