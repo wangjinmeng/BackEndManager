@@ -26,10 +26,6 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password')
   }
   ngOnInit() {
-    this.http.get('localhost:3000/getUser?userName=user1').subscribe(data => {
-      // Read the result field from the JSON response.
-      console.log(data);
-    });
   }
   validPassword(){
     this.loginService.validPassword(this.name.value,this.password.value).then((param)=>{

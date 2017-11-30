@@ -13,6 +13,7 @@
   bottom:0;
   overflow: hidden;
   z-index: -1;
+  background: #f7fafc;
 }
 .my-login-page-bg>img{
   width: 100%;
