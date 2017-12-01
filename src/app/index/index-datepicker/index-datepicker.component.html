@@ -1,0 +1,76 @@
+<share-box>
+  <h4 name="title">datePicker</h4>
+  <div name="body" style="padding: 10px">
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text"
+               class="form-control"
+               [minDate]="minDate"
+               [maxDate]="maxDate"
+               #dp="bsDatepicker"
+               bsDatepicker [(bsValue)]="bsValue">
+      </div>
+      <div class="col-xs-12 col-12 col-md-3 form-group">
+        <button class="btn btn-success" (click)="dp.toggle()">Date Picker</button>
+      </div>
+    </div>
+    日期范围
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker>
+      </div>
+      <div class="col-xs-12 col-12 col-md-3 form-group">
+        <button class="btn btn-success" (click)="drp.toggle()">Date Range Picker</button>
+      </div>
+    </div>
+    主题
+    <div class="row">
+      <div class="col-xs-6 col-6 col-md-4 col-lg-4">
+        <select
+          class="custom-select form-control "
+          [(ngModel)]="colorTheme" (ngModelChange)="applyTheme(dp);">
+          <option value="theme-default">default</option>
+          <option value="theme-green">green</option>
+          <option value="theme-blue">blue</option>
+          <option value="theme-dark-blue">dark-blue</option>
+          <option value="theme-red">red</option>
+          <option value="theme-orange">orange</option>
+        </select>
+      </div>
+      <div class="col-xs-6 col-6 col-md-4 col-lg-4">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" bsDatepicker #dp="bsDatepicker" [bsConfig]="bsConfig">
+            <div class="input-group-btn">
+              <button class="btn btn-success" (click)="dp.show() ">Open</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    表单
+    <div class="row">
+      <div class="col-xs-6 col-6 col-md-4 col-lg-4">
+        <form [formGroup]="formGroup">
+          <input type="text" formControlName="data" bsDatepicker>
+
+          <hr>
+          <p>验证结果</p>
+          {{formGroup.valid|json}}
+          <hr>
+          <p>表单的值</p>
+          {{formGroup.value|json}}
+        </form>
+      </div>
+    </div>
+    时间选择器
+    <timepicker [(ngModel)]="myTime"></timepicker>
+    <share-alert>
+      <ng-container name='body'>
+        {{myTime}}
+      </ng-container>
+    </share-alert>
+  </div>
+</share-box>
+

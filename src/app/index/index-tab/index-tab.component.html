@@ -1,0 +1,67 @@
+<div>
+  <share-box>
+    <ng-container name="title">tabset</ng-container>
+    <div style="padding: 10px;" name="body">
+      <dl>
+        <dt>添加标题</dt>
+        <dd>
+          两种方法 <br>
+          第一种，在tab的heading中传入标题 <br>
+          <pre>&lt;tab heading=&quot;静态标题1&quot;&gt;静态文本1&lt;/tab&gt;</pre>
+          第二种，使用内容投影，在tab标签内加入一个标签包含 tabHeading属性
+          <pre>
+&lt;tab&gt;
+  &lt;ng-template tabHeading&gt;
+    &lt;span class=&quot;badge badge-secondary&quot;&gt;Click here!&lt;/span&gt;
+  &lt;/ng-template&gt;
+    I&#x27;ve got an HTML heading, and a select callback. Pretty cool!
+&lt;/tab&gt;
+          </pre>
+        </dd>
+      </dl>
+      <hr>
+      <dl>
+        <dt>操作</dt>
+        <dd>
+          <p>通过viewchild对子组件进行操作</p>
+          <p>第一步，通过viewChild获取到子组件</p>
+          <pre> @ViewChild('staticTabs') staticTabs:TabsetComponent;</pre>
+          <p>第二步，staticTabs对其进行操作</p>
+          <p>选中</p>
+          <pre> this.staticTabs.tabs[index].active=true</pre>
+          <p>禁用</p>
+          <pre>his.staticTabs.tabs[index].disabled=true</pre>
+          <p>启用</p>
+          <pre>his.staticTabs.tabs[index].disabled=false</pre>
+        </dd>
+      </dl>
+    </div>
+  </share-box>
+</div>
+<div style="background: #fff;padding: 20px;">
+  <tabset>
+    <tab heading="静态标题" id="tab1">静态文本</tab>
+    <tab heading="静态标题1">静态文本1</tab>
+    <tab heading="静态标题2" [removable]="true">
+      静态文本2
+    </tab>
+    <tab>
+      <ng-template tabHeading>
+        <span class="badge badge-secondary">Click here!</span>
+      </ng-template>
+        I've got an HTML heading, and a select callback. Pretty cool!
+    </tab>
+  </tabset>
+  <br>
+  <hr>
+  <br>
+  <button class="btn btn-primary" (click)="select(0)">选择1</button>
+  <button class="btn btn-primary" (click)="select(1)">选择2</button>
+  <button class="btn btn-primary" (click)="disableEnable(2)">启用/禁用3</button>
+  <hr>
+  <tabset #staticTabs>
+    <tab heading="1">1</tab>
+    <tab heading="2">2</tab>
+    <tab heading="3">3</tab>
+  </tabset>
+</div>
