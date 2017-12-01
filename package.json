@@ -36,6 +36,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "admin-lte": "^2.3.11",
+    "body-parser": "^1.18.2",
     "codelyzer": "~3.1.1",
     "freeng": "^0.4.3",
     "jasmine-core": "~2.6.2",
