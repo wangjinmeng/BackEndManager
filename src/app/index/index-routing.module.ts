@@ -100,13 +100,13 @@ const routes: Routes = [
       },
       {
         path:'user',
-        component:IndexUserComponent,
         data:   {
           path: 'user',
           name:'用户管理',
           style:'fa  fa-user',
           id:9
-        }
+        },
+        loadChildren:'app/index/index-user/index-user.module#IndexUserModule'
       },
       {
         path:'tab',

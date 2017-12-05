@@ -2,9 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter, TemplateRef} from '@angu
 import {Authority} from "../../core/authority.data";
 import {AuthorityService} from "../../core/service/authority.service";
 import {Router, ActivatedRoute} from "@angular/router";
-import {BsModalService, BsModalRef} from "ngx-bootstrap";
-import {IndexAuthorityLoadingComponent} from "../loading/loading.component";
-import {IndexAuthoritySuccessComponent} from "../success/success.component";
+import {MyModalService} from "../../../component/my-modal/my-modal.service";
 
 @Component({
   selector: 'index-authority-list',
@@ -13,13 +11,13 @@ import {IndexAuthoritySuccessComponent} from "../success/success.component";
 export class IndexAuthorityListComponent implements OnInit {
   authorityList:Authority[];
   curEditId;
-  bsModalRef:BsModalRef;
+  deleteId;
   constructor(
     private authService:AuthorityService,
     private router:Router,
     private route:ActivatedRoute,
-    private modalService:BsModalService
-  ) { }
+    private myModal:MyModalService
+  ) {}
   ngOnInit() {
     this.getAuthorityList();
     this.curEditId = this.route.snapshot.paramMap.get('id');
@@ -30,27 +28,16 @@ export class IndexAuthorityListComponent implements OnInit {
   add(){
     this.router.navigate(['form', {method:0}],{relativeTo: this.route})
   }
-  deleteId;
   delete(id,template){
     this.deleteId=id;
-    this.bsModalRef=this.modalService.show(template);
+    this.myModal.confirm('确定删除吗？').subscribe((data)=>{
+      if(data){
+        this.authService.delete(this.deleteId)
+      }
+      this.deleteId='';
+    })
   }
   edit(id){
     this.router.navigate(['form', {method:1,id:id}],{relativeTo: this.route})
-  }
-  confirm(){
-    this.deleteId='';
-    this.bsModalRef.hide();
-    this.bsModalRef = this.modalService.show(IndexAuthorityLoadingComponent);
-    this.authService.delete(this.deleteId).then(()=>{
-      this.bsModalRef.hide();
-      this.bsModalRef = this.modalService.show(IndexAuthoritySuccessComponent);
-      setTimeout(()=>{
-      },3000)
-    });
-  }
-  decline(){
-    this.deleteId='';
-    this.bsModalRef.hide()
   }
 }

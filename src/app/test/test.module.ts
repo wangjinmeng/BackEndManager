@@ -9,11 +9,12 @@ import { ModalContentComponent } from './common/modal-content/modal-content.comp
 import {ShowModalService} from "./common/show-modal.service";
 import { ModalLoadingComponent } from './common/modal-loading/modal-loading.component';
 import { ModalConfirmComponent } from './common/modal-confirm/modal-confirm.component';
+import {MyModalModule} from "../component/my-modal/my-modal.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    ModalModule,
+    MyModalModule,
     RouterModule.forChild([
       {
         path:'',
@@ -21,8 +22,6 @@ import { ModalConfirmComponent } from './common/modal-confirm/modal-confirm.comp
       }
     ])
   ],
-  declarations: [IndexComponent, AdBannerComponent, AdDirective,ModalContentComponent, ModalLoadingComponent, ModalConfirmComponent],
-  providers:[BsModalService,ComponentLoaderFactory,PositioningService,ShowModalService],
-  entryComponents:[ModalContentComponent,ModalLoadingComponent,ModalConfirmComponent]
+  declarations: [IndexComponent, AdBannerComponent, AdDirective],
 })
 export class TestModule { }

@@ -20,7 +20,7 @@
         </ol>
       </section>
       <section class="content">
-        <router-outlet></router-outlet>
+        <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
       </section>
     </div>
     <!-- /.content-wrapper -->

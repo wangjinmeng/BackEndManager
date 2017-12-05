@@ -3,6 +3,9 @@ ul,ol{
   list-style: none;
 }
 @import "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "../node_modules/admin-lte/dist/css/AdminLTE.css";
+@import "../node_modules/admin-lte/dist/css/skins/skin-blue.min.css";
 body{
   min-width: 320px;
 }
@@ -33,4 +36,7 @@ ol{list-style-type:upper-alpha;}
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
+}
+.modal-content {
+  border: none;
 }

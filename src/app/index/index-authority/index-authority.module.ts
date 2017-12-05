@@ -9,6 +9,7 @@ import {ModalModule, ComponentLoaderFactory, PositioningService} from "ngx-boots
 import {BsModalService} from "ngx-bootstrap";
 import {IndexAuthorityLoadingComponent} from './loading/loading.component';
 import {IndexAuthoritySuccessComponent} from './success/success.component';
+import {MyModalModule} from "../../component/my-modal/my-modal.module";
 @NgModule({
   providers:[
     BsModalService,
@@ -18,7 +19,7 @@ import {IndexAuthoritySuccessComponent} from './success/success.component';
   imports:[
     CommonModule,
     ShareModule,
-    ModalModule,
+    MyModalModule,
     RouterModule.forChild([
       {
         path:'',

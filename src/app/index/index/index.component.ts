@@ -20,7 +20,7 @@ export class IndexComponent implements OnInit {
   userName:string;
   userImg:string;
   pageTitle:string;
-  ttIcon:string
+  ttIcon:string;
   curRouteId;
   navData;
   curRouter:string;
@@ -61,4 +61,6 @@ export class IndexComponent implements OnInit {
     this.ttIcon=data.style;
     this.tt.setTitle(data.name)
   }
+  onActivate($event){}
+  onDeactivate($event){}
 }

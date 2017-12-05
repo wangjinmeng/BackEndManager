@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IndexModalsComponent, LoadingModule} from './index-modals.component';
+import {IndexModalsComponent} from './index-modals.component';
 import {RouterModule} from "@angular/router";
-import {ModalModule, BsModalService, ComponentLoaderFactory, PositioningService} from "ngx-bootstrap";
+import {MyModalModule} from "../../component/my-modal/my-modal.module";
+import {MyHttpModule} from "../../component/my-http/my-http.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    ModalModule,
+    MyModalModule,
+    MyHttpModule,
     RouterModule.forChild([
       {path:'',component:IndexModalsComponent}
     ])
   ],
-  providers:[BsModalService,ComponentLoaderFactory,PositioningService],
-  declarations: [IndexModalsComponent,LoadingModule],
-  entryComponents:[LoadingModule]
+  providers:[],
+  declarations: [IndexModalsComponent]
 })
 export class IndexModalsModule { }

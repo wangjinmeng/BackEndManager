@@ -1,4 +1,4 @@
-<share-box [toolCollapse]="false" [loading]="!users">
+<share-box [toolCollapse]="false" [loading]="!userList">
   <ng-container name='tool'>
     <a class="btn btn-sm btn-primary" (click)="add()">
       <i class="glyphicon glyphicon-plus"></i>
@@ -9,18 +9,22 @@
     <table class="table table-bordered">
       <tbody>
       <tr>
-        <th style="width: 60px">头像</th>
-        <th>名称</th>
+        <th style="width:20px">#</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>地址</th>
         <th style="width: 90px">操作</th>
       </tr>
-      <ng-container *ngIf="users">
-        <tr *ngFor="let item of users;let i=index;" [class.bg-gray]="curEditId===item.id">
-          <td class="user-header">
-            <img [src]="item.img" class="img-circle" style="width: 50px">
+      <ng-container *ngIf="userList">
+        <tr *ngFor="let item of userList.content;let i=index;" [class.bg-gray]="curEditId===item.id">
+          <td>
+            {{i+1}}
           </td>
           <td>{{item.name}}</td>
+          <td>{{item.age}}</td>
+          <td>{{item.address}}</td>
           <td>
-            <a type="button" class="btn  btn-success  btn-sm" (click)="edit(item)">
+            <a type="button" class="btn  btn-success  btn-sm" (click)="edit(item.id)">
               <i class="glyphicon glyphicon-pencil"></i>
             </a>
             <a type="button" class="btn  btn-danger btn-sm" (click)="delete(item.id)">
@@ -33,3 +37,6 @@
     </table>
   </ng-container>
 </share-box>
+
+
+

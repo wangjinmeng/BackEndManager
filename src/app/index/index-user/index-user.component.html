@@ -1,14 +1,5 @@
 <div class="row">
-  <div class="col-lg-4 col-sm-12">
-    <index-user-list
-      [curEditId]="curEditId"
-      [users]="userList"
-      (editEvent)="edit($event)"
-      (addEvent)="add()"
-      (deleteEvent)="delete($event)">
-    </index-user-list>
-  </div>
-  <div class="col-lg-8 col-sm-12">
-    <index-user-form [roles]="roles" [formTitle]="formTitle" [user]="curUser" (cancelEvent)="cancel()" (submitEvent)="submit($event)"></index-user-form>
+  <div class="col-sm-12">
+    <router-outlet></router-outlet>
   </div>
 </div>

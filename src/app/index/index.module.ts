@@ -14,14 +14,10 @@ import { IndexRoleListComponent } from './index-role/list/list.component';
 import { IndexRoleFormComponent } from './index-role/form/form.component';
 import { TablesComponent } from './tables/tables.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import {IndexUserComponent} from "./index-user/index-user.component";
-import {IndexUserListComponent} from "./index-user/list/list.component";
-import {IndexUserFormComponent} from "./index-user/form/form.component";
 
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
 import {IndexCoreModule} from "./core/index.core.module";
-import { IndexDatepickerComponent } from './index-datepicker/index-datepicker.component';
 
 
 @NgModule({
@@ -38,9 +34,6 @@ import { IndexDatepickerComponent } from './index-datepicker/index-datepicker.co
     IndexRoleComponent,
     IndexRoleListComponent,
     IndexRoleFormComponent,
-    IndexUserComponent,
-    IndexUserListComponent,
-    IndexUserFormComponent,
     TablesComponent,
     CalendarComponent,
     CalendarComponent,

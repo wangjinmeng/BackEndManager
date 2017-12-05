@@ -109,15 +109,12 @@ userRouter.post("/save",  function(req, res, next){
       });
 
     });
-
     return promise;
-
   });
-
 });
 
 
-userRouter.post("/update", function(){
+userRouter.post("/update", function(req, res){
   var requestData = req.body;
   if(requestData.id == null){
     throw new Error("请求参数id是必须的");
@@ -127,7 +124,7 @@ userRouter.post("/update", function(){
     var promise = new Promise(function(resolve, reject){
 
       var userCollection = db.collection("user");
-      userCollection.findOne({id:query.id}).then(function(user){
+      userCollection.findOne({id:requestData.id}).then(function(user){
         user.name = requestData.name;
         user.password = requestData.password;
         user.age = requestData.age;
@@ -137,11 +134,7 @@ userRouter.post("/update", function(){
           res.send(Message.success("修改用户成功"));
           resolve();
         });
-
-
       });
-
-
     });
 
     return promise;
@@ -152,16 +145,17 @@ userRouter.post("/update", function(){
 
 
 userRouter.post("/delete", function(req, res, next){
+  console.log(req);
   var requestData = req.body;
+  console.log(requestData)
   if(requestData.id == null){
     throw new Error("请求参数id是必须的");
   }
-
   dbConnection(function(db){
     var promise = new Promise(function(resolve, reject){
 
       var userCollection = db.collection("user");
-      userCollection.findOne({id:query.id}).then(function(user){
+      userCollection.findOne({id:requestData.id}).then(function(user){
 
         userCollection.deleteOne({id:user.id}).then(function(r){
           res.send(Message.success("删除用户成功"));
@@ -176,10 +170,9 @@ userRouter.post("/delete", function(req, res, next){
     return promise;
 
   });
-
 });
 
-app.use("/user", userRouter);
+app.use("/api/user", userRouter);
 
 module.exports = app;
 
