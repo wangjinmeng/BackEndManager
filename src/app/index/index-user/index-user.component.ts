@@ -3,5 +3,10 @@ import {Component} from "@angular/core";
   templateUrl:'./index-user.component.html'
 })
 export class IndexUserComponent{
+  pageData={
+    name:'用户管理',
+    style:'fa  fa-user',
+    id:9
+  };
   constructor() { }
 }

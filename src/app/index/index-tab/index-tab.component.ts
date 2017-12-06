@@ -6,6 +6,11 @@ import {TabsetComponent} from "ngx-bootstrap";
   templateUrl: './index-tab.component.html'
 })
 export class IndexTabComponent implements OnInit {
+  pageData={
+    name:'选项卡',
+    style:'fa  fa-heartbeat',
+    id:10
+  };
   @ViewChild('staticTabs') staticTabs:TabsetComponent;
   constructor() { }
   ngOnInit() {

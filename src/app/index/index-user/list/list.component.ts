@@ -17,6 +17,7 @@ export class IndexUserListComponent implements OnInit,OnChanges{
   ) { }
   ngOnInit() {
     this.getList();
+    this.curEditId = this.route.snapshot.paramMap.get('id');
   }
   ngOnChanges(){}
   getList(){

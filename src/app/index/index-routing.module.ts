@@ -22,120 +22,50 @@ const routes: Routes = [
     children:[
       {
         path:'general',
-        component:IndexUiGeneralComponent,
-        data: {
-          path: 'general',
-          name:'小部件',
-          style:'fa  fa-cubes',
-          id:1
-        }
+        component:IndexUiGeneralComponent
       },
       {
         path:'form',
-        component:IndexFormPageComponent,
-        data: {
-          path: 'form',
-          name:'表单',
-          style:'glyphicon glyphicon-list-alt',
-          id:2
-        }
+        component:IndexFormPageComponent
       },
       {
         path:'animation',
-        component:AnimationComponent,
-        data: {
-          path: 'animation',
-          name:'动画',
-          style:'glyphicon glyphicon-film ',
-          id:3
-        }
+        component:AnimationComponent
       },
       {
         path:'tables',
-        component:TablesComponent,
-        data: {
-          path: 'tables',
-          name:'表格',
-          id:4
-        }
+        component:TablesComponent
       },
       {
         path:'calendar',
-        component:CalendarComponent,
-        data: {
-          path: 'calendar',
-          name:'日期',
-          id:5
-        }
+        component:CalendarComponent
       },
       {
         path:'tree',
-        component:IndexTreePageComponent,
-        data: {
-          path: 'tree',
-          name:'树',
-          style:'fa  fa-heartbeat',
-          id:6
-        }
+        component:IndexTreePageComponent
       },
       {
         path:'authority',
-        data:   {
-          path: 'authority',
-          name:'权限管理',
-          style:'fa  fa-heartbeat',
-          id:7
-        },
         loadChildren:'app/index/index-authority/index-authority.module#IndexAuthorityModule'
       },
       {
         path:'role',
-        component:IndexRoleComponent,
-        data:   {
-          path: 'role',
-          name:'角色管理',
-          style:'fa  fa-user',
-          id:8
-        }
+        component:IndexRoleComponent
       },
       {
         path:'user',
-        data:   {
-          path: 'user',
-          name:'用户管理',
-          style:'fa  fa-user',
-          id:9
-        },
         loadChildren:'app/index/index-user/index-user.module#IndexUserModule'
       },
       {
         path:'tab',
-        data:   {
-          path: 'tab',
-          name:'选项卡',
-          style:'fa  fa-heartbeat',
-          id:10
-        },
         loadChildren:'app/index/index-tab/index-tab.module#IndexTabModule'
       },
       {
         path:'datepicker',
-        data:   {
-          path: 'datepicker',
-          name:'日期选择器',
-          style:'fa  fa-heartbeat',
-          id:11
-        },
         loadChildren:'app/index/index-datepicker/index-datepicker.module#IndexDatepickerModule'
       },
       {
         path:'modals',
-        data:   {
-          path: 'modals',
-          name:'弹出层',
-          style:'fa  fa-heartbeat',
-          id:12
-        },
         loadChildren:'app/index/index-modals/index-modals.module#IndexModalsModule'
       },
       {path:'',redirectTo:'general',pathMatch:'full'}

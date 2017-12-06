@@ -6,6 +6,11 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './index-tree-page.component.html'
 })
 export class IndexTreePageComponent implements OnInit {
+  pageData={
+    name:'树',
+    style:'fa  fa-heartbeat',
+    id:6
+  }
   constructor() {
     // var observable = Observable.create(function (observer) {
     //   observer.next(1);

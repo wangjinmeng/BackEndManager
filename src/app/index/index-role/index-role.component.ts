@@ -8,6 +8,11 @@ import {Authority} from "../core/authority.data";
   templateUrl: './index-role.component.html'
 })
 export class IndexRoleComponent implements OnInit {
+  pageData={
+    name:'角色管理',
+    style:'fa  fa-user',
+    id:8
+  }
   authorities:Authority[];
   roles:Role[];
   curRole;

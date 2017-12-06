@@ -14,9 +14,8 @@ export class IndexUserFormComponent{
     private userService:IndexUserService
   ){}
   formData=[];
-  loadingFlag:boolean=false;
+  loadingFlag:boolean=true;
   method=0;//0 添加 1 修改
-  handle:string;
   get handleTitle(){
     return this.method==0?'添加':'编辑'
   }
@@ -74,13 +73,14 @@ export class IndexUserFormComponent{
       this.formData.push(new FormHidden({value:'', key:'id'}));
       this.curId = this.route.snapshot.paramMap.get('id');
       this.userService.getItem(this.curId).subscribe((data)=>{
+        this.loadingFlag=false;
         this.reset(data)
       })
     }else{
+      this.loadingFlag=false;
       this.method=0
     }
   }
-  ngOnChanges(){}
   reset(data){
     if(this.formGroup){
       this.formGroup.reset(data)
@@ -97,11 +97,11 @@ export class IndexUserFormComponent{
     }else{
       this.userService.update(this.formGroup.value).subscribe(data=>{
         if(data){
-          this.back();
+          this.loadingFlag=false;
+          setTimeout(()=>{this.back();},1000);
         }
       })
     }
-    this.loadingFlag=false;
   }
   cancel(){
     let resetValue=this.method==0?{}:{id:this.curId}
@@ -110,9 +110,9 @@ export class IndexUserFormComponent{
   back(){
     this.loadingFlag=false;
     if(this.method==1){
-      this.router.navigate(['../',{id:this.curId}],{relativeTo: this.route})
+      this.router.navigate(['../../user/list',{id:this.curId}],{relativeTo: this.route})
     }else{
-      this.router.navigate(['../'],{relativeTo: this.route})
+      this.router.navigate(['../../user/list'],{relativeTo: this.route})
     }
   }
 }

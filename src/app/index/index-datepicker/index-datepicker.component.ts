@@ -6,6 +6,11 @@ import { listLocales } from 'ngx-bootstrap/bs-moment';
   templateUrl: './index-datepicker.component.html'
 })
 export class IndexDatepickerComponent implements OnInit {
+  pageData={
+    name:'日期选择器',
+    style:'fa  fa-heartbeat',
+    id:11
+  };
   minDate:Date=new Date(2017,0,1);
   maxDate:Date=new Date(2017,11,31);
   bsValue:Date=new Date();

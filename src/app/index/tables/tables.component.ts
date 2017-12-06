@@ -10,6 +10,11 @@ import "rxjs/Rx";
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent implements OnInit {
+  pageData={
+    name:'表格',
+    style:'fa fa-table ',
+    id:4
+  };
   private tableList:Array<TableList>;
   private tableIdFilter:FormControl=new FormControl();
   private keyword:string;

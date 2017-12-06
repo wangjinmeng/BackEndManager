@@ -16,6 +16,11 @@ import {FLYINOUT2} from "./animation/fly-in-out2.animation";
 
 })
 export class AnimationComponent implements OnInit {
+  pageData={
+    name:'动画',
+    style:'glyphicon glyphicon-film ',
+    id:3
+  }
   state:string="inactive";
   show = false;
   position=false;

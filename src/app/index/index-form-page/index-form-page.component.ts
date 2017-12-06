@@ -10,6 +10,11 @@ import {ShareFormBoxComponent} from "../../share/component/share-form-box/share-
   templateUrl: './index-form-page.component.html'
 })
 export class IndexFormPageComponent implements OnInit {
+  pageData={
+    name:'表单',
+    style:'glyphicon glyphicon-list-alt',
+    id:2
+  };
   formData= [
     new FormText({
         value:'wjm',

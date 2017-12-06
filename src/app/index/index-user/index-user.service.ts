@@ -12,13 +12,13 @@ export class IndexUserService {
     return this.myHttp.get('/api/user/getUser?id='+id,{successPopup:false,loading:false});
   }
   add(data:User){
-    return this.myHttp.post('/api/user/save',data,{successPopup:true,loading:true});
+    return this.myHttp.post('/api/user/save',data,{successPopup:true,loading:false});
   }
   delete(id){
     return this.myHttp.post('/api/user/delete',{id:id},{successPopup:true,loading:true});
   }
   update(data:User){
-    return this.myHttp.post('/api/user/update',data,{successPopup:true,loading:true});
+    return this.myHttp.post('/api/user/update',data,{successPopup:true,loading:false});
   }
 }
 export class User{

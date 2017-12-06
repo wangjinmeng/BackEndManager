@@ -8,6 +8,11 @@ import {MyHttpService, MyHttpConfig} from "../../component/my-http/my-http.servi
   templateUrl: './index-modals.component.html'
 })
 export class IndexModalsComponent implements OnInit{
+  pageData={
+    name:'弹出层',
+    style:'fa  fa-heartbeat',
+    id:12
+  };
   conf:MyHttpConfig={loading:true,successMsg:'获取成功',errorMsg:'发生错误了'}
   ngOnInit(){
     this.myHttp.get('/api/user/listPage',this.conf).subscribe({

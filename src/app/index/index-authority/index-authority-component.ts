@@ -5,6 +5,11 @@ import {Authority} from "../core/authority.data";
   templateUrl:'./index-authority-component.html'
 })
 export class IndexAuthorityComponent implements OnInit{
+  pageData= {
+    name:'权限管理',
+    style:'glyphicon glyphicon-menu-hamburger',
+    id:7
+  }
   constructor(private authService:AuthorityService){}
   curEditId;
   curEditAuthority:Authority;
