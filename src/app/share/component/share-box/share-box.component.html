@@ -15,9 +15,7 @@
     <!-- /.box-tools -->
   </div>
   <!-- /.box-header -->
-  <div  class="body">
-    <ng-content select="[name=body]"></ng-content>
-  </div>
+  <ng-content select="[name=body]"></ng-content>
   <!-- /.box-body -->
   <div  *ngIf="loading" class="overlay">
     <i class="fa fa-refresh fa-spin"></i>

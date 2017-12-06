@@ -30,12 +30,6 @@ export const authorities:Authority[]=[
     id:4
   },
   {
-    path: 'calendar',
-    name:'日期',
-    style:'fa fa-calendar ',
-    id:5
-  },
-  {
     path: 'tree',
     name:'树',
     style:'fa  fa-heartbeat',

@@ -34,7 +34,7 @@ export class MyModalService {
   }
   msg(msg,delay?:number){
     let ref=this.popup(msg);
-    let time=(delay>0&&typeof delay=='number')?delay:1500;
+    let time=(delay>0&&typeof delay=='number')?delay:3000;
     setTimeout(()=>{ref.hide()},time);
   }
   popup(msg){

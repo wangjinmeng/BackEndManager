@@ -13,7 +13,6 @@ import { IndexRoleComponent } from './index-role/index-role.component';
 import { IndexRoleListComponent } from './index-role/list/list.component';
 import { IndexRoleFormComponent } from './index-role/form/form.component';
 import { TablesComponent } from './tables/tables.component';
-import { CalendarComponent } from './calendar/calendar.component';
 
 import {TablesService} from "./tables/tables.service";
 import { TablesPipe } from './tables/tables.pipe';
@@ -35,8 +34,6 @@ import {IndexCoreModule} from "./core/index.core.module";
     IndexRoleListComponent,
     IndexRoleFormComponent,
     TablesComponent,
-    CalendarComponent,
-    CalendarComponent,
     TablesPipe
   ],
   imports: [

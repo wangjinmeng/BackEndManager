@@ -7,11 +7,8 @@ import {IndexUiGeneralComponent} from "./index-ui-general/index-ui-general.compo
 import {IndexFormPageComponent} from "./index-form-page/index-form-page.component";
 import {IndexTreePageComponent} from "./index-tree-page/index-tree-page.component";
 import {AnimationComponent} from "./animation/animation.component";
-import {IndexAuthorityComponent} from "./index-authority/index-authority-component";
 import {IndexRoleComponent} from "./index-role/index-role.component";
 import {TablesComponent} from "./tables/tables.component";
-import {CalendarComponent} from "./calendar/calendar.component";
-import {IndexUserComponent} from "./index-user/index-user.component";
 const routes: Routes = [
   { path: '',
     component: IndexComponent,
@@ -35,10 +32,6 @@ const routes: Routes = [
       {
         path:'tables',
         component:TablesComponent
-      },
-      {
-        path:'calendar',
-        component:CalendarComponent
       },
       {
         path:'tree',

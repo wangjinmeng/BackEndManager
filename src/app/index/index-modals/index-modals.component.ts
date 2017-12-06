@@ -38,13 +38,13 @@ export class IndexModalsComponent implements OnInit{
     })
   }
   defaultMsg(){
-    this.showModal.msg('这个是msg弹框，默认1.5s后消失')
+    this.showModal.msg('这个是msg弹框，默认3s后自动消失')
   }
   msg(){
-    this.showModal.msg('这个是msg弹框，2s后消失',2000)
+    this.showModal.msg('这个是msg弹框，2s后自动消失',2000)
   }
   popup(){
-    this.showModal.popup('这个是popup弹框，不会消失')
+    this.showModal.popup('这个是popup弹框，不会自动消失')
   }
   showDom(ref){
     let modalRef=this.showModal.showDom(ref);
