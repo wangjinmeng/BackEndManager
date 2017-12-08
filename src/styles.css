@@ -1,45 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
-ul,ol{
-  list-style: none;
-}
-@import "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-@import "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-@import "../node_modules/admin-lte/dist/css/AdminLTE.css";
-@import "../node_modules/admin-lte/dist/css/skins/skin-blue.min.css";
-body{
-  min-width: 320px;
-}
-.sidebar-collapse .main-sidebar {
-  transform: translateX(0);
-}
-ol{list-style-type:upper-alpha;}
+@import "assets/css/my-animate.css";
+
 .full-screen{
   position: absolute;
   top:0;
   left:0;
   bottom:0;
   right:0;
+  overflow: hidden;
 }
 .full-screen .modal-content{
   position: static;
 }
-.fa-spin {
-  -webkit-animation: fa-spin 1s  infinite linear;
-  animation: fa-spin 1s infinite linear;
-}
-@keyframes fa-spin{
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
+/*重定义bootstrap样式*/
 .modal-content {
   border: none;
 }
-/*.modal{*/
-  /*background: none!important;*/
-/*}*/
+a{
+  /*color: #fff;*/
+}
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+
+.main-header-nav,
+.main-header-logo,
+.main-sidebar,
+.main-content-wrapper,
+.main-footer
+{
+  transition: all .3s;
+}
+
+.main-header{
+  padding:0 15px;
+  line-height: 50px;
+  height: 50px;
+  background: #3c8dbc;
+}
+.sidebar-toggle{
+
+}
+
+.main-header-logo{
+  float: left;
+  width: 230px;
+  height: 50px;
+}
+.main-header-nav{
+  margin-left: 230px;
+  height: 50px;
+}
+
+.main-sidebar{
+  position: absolute;
+  top: 50px;
+  left:0;
+  bottom: 0;
+  width: 230px;
+  z-index: 99;
+  background:#222d32;
+}
+.main-content-wrapper{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+
+.main-footer{
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  right:0;
+  bottom: 0;
+  background: #eee;
+}
+.main-content-wrapper,
+.main-footer{
+  left: 230px;
+}
+.sidebar-mini .main-sidebar{
+  left: -230px;
+}
+.sidebar-mini .main-content-wrapper,
+.sidebar-mini .main-footer
+{
+  left: 0;
+}
+.main-content-wrapper,
+.main-footer{
+  left: 230px;
+}
+@media (max-width: 767px) {
+  .main-content-wrapper,
+  .main-footer{
+    left: 0;
+  }
+}
+
+
+
+
+
+/*侧边栏样式*/
+.sidebar-menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-nav{
+  position: relative;
+  display: block;
+  padding:12px  15px;
+  border-left: 3px solid transparent;
+  line-height:20px;
+  color: rgba(255,255,255,.9);
+  background: rgba(0,0,0,.1);
+}
+.menu-nav:hover,
+.active .menu-nav
+{
+  background: rgba(0,0,0,.3);
+  color: rgba(255,255,255,1);
+}
+
+.active .menu-nav{
+  border-left-color:#4cae4c;
+}
+.menu-icon-left{
+  margin-right: 5px;
+}
+.menu-right-pull{
+  transition: all 0.3s;
+}
+.menu-subnav-box{
+  margin:0;
+  padding-left: 5px;
+  background: rgba(255,255,255,.1);
+  overflow: hidden;
+}
+.menu-subnav{
+  display: block;
+  padding:8px 15px;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(255,255,255,.7);
+}
+.menu-subnav:hover,
+.menu-subnav.cur
+{
+  color: rgba(255,255,255,1);
+}
+.menu-subnav:hover{}
+.open-menu.menu-right-pull{
+  transform: rotate(-90deg);
+}
+.open-menu .menu-subnav-box{
+  height:auto;
+}
+
+

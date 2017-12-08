@@ -16,11 +16,9 @@ export class ShareBoxComponent implements OnInit,OnChanges {
   currentClasses={};
   setCurrentClass(){
     this.currentClasses={
-      'box':true,
-      'box-solid':this.styleSolid,
-      'collapsed-box':this.styleCollapsed
+      'panel':true
     };
-    this.currentClasses['box-'+this.themeArr[this.styleTheme]]=true;
+    this.currentClasses['panel-'+this.themeArr[this.styleTheme]]=true;
   }
   constructor() {}
   ngOnInit() {

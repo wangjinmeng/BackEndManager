@@ -1,6 +1,31 @@
+<!--<div [ngClass]="currentClasses">-->
+  <!--<div class="box-header with-border">-->
+    <!--<h3 class="box-title">-->
+      <!--<ng-content select="[name=title]"></ng-content>-->
+    <!--</h3>-->
+    <!--<div class="box-tools pull-right">-->
+      <!--<ng-content select="[name=tool]"></ng-content>-->
+      <!--<button type="button" class="btn btn-box-tool" data-widget="collapse" *ngIf="toolCollapse" (click)="collapse()">-->
+        <!--<i class="fa fa-minus"></i>-->
+      <!--</button>-->
+      <!--<button type="button" class="btn btn-box-tool" data-widget="remove"  *ngIf="toolRemove" (click)="remove()">-->
+        <!--<i class="fa fa-times"></i>-->
+      <!--</button>-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /.box-tools &ndash;&gt;-->
+  <!--</div>-->
+  <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
+  <!--<ng-content select="[name=body]"></ng-content>-->
+  <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+  <!--<div  *ngIf="loading" class="overlay">-->
+    <!--<i class="fa fa-refresh fa-spin"></i>-->
+  <!--</div>-->
+<!--</div>-->
+
+
 <div [ngClass]="currentClasses">
-  <div class="box-header with-border">
-    <h3 class="box-title">
+  <div class="panel-heading">
+    <h3>
       <ng-content select="[name=title]"></ng-content>
     </h3>
     <div class="box-tools pull-right">
@@ -12,12 +37,8 @@
         <i class="fa fa-times"></i>
       </button>
     </div>
-    <!-- /.box-tools -->
   </div>
-  <!-- /.box-header -->
-  <ng-content select="[name=body]"></ng-content>
-  <!-- /.box-body -->
-  <div  *ngIf="loading" class="overlay">
-    <i class="fa fa-refresh fa-spin"></i>
+  <div class="panel-body">
+    <ng-content select="[name=body]"></ng-content>
   </div>
 </div>

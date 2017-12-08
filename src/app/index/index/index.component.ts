@@ -5,15 +5,13 @@ import {Title} from "@angular/platform-browser";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import {NavService} from "../core/service/nav.service";
-// import {NavService} from "../nav.service";
+import {NavService, SidebarNav} from "../core/service/nav.service";
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styles:[
-    ` 
- `
-  ]
+  styleUrls:['./index.component.css']
+
 })
 export class IndexComponent implements OnInit {
   sidebarCollapse:boolean=false;
@@ -22,8 +20,8 @@ export class IndexComponent implements OnInit {
   pageTitle:string;
   ttIcon:string;
   curRouteId;
-  navData;
-  curRouter:string;
+  // navData;
+  navData:SidebarNav[];
   constructor(
     private routeInfo:ActivatedRoute,
     private router:Router,
@@ -64,4 +62,5 @@ export class IndexComponent implements OnInit {
     this.setPage($event.pageData)
   }
   onDeactivate($event){}
+
 }

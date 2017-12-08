@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {users} from "../userInfor";
-
 let currentState=false;
 @Injectable()
 export class LoginService {

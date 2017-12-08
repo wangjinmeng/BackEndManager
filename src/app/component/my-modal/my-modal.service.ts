@@ -4,7 +4,6 @@ import {LoadingComponent} from "./loading/loading.component";
 import {ConfirmComponent} from "./confirm/confirm.component";
 import {Observable} from "rxjs";
 import {MsgComponent} from "./msg/msg.component";
-import {number} from "freeng/component/validation/number";
 
 @Injectable()
 export class MyModalService {

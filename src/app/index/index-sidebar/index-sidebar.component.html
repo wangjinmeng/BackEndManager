@@ -1,17 +1,9 @@
-<aside class="main-sidebar">
-  <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
-    <!-- Sidebar Menu -->
-    <ul class="sidebar-menu">
-      <li class="header">菜单</li>
-      <li *ngFor="let nav of navList"  [class.active]="nav.id===curId">
-        <a [routerLink]="'./'+nav.path">
-          <i [ngClass]="nav.style"></i>
-          <span>{{nav.name}}</span>
-        </a>
-      </li>
-    </ul>
-    <!-- /.sidebar-menu -->
-  </section>
-  <!-- /.sidebar -->
-</aside>
+<div class="sidebar-menu">
+  <ng-container *ngFor="let item of navList">
+    <index-sidebar-item
+      [itemData]="item"
+      [isSelect]="item.id==curId"
+      (toggleOpenState)="toggleSubNav($event)"
+    (toggleSelectState)="toggleSelect($event)"></index-sidebar-item>
+  </ng-container>
+</div>

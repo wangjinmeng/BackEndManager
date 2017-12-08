@@ -1,16 +1,16 @@
-<div class="skin-blue sidebar-mini" [class.sidebar-collapse]="sidebarCollapse" style="height: auto; min-height: 100%;">
-  <div class="wrapper" style="height: auto; min-height: 100%;">
-    <!-- Main Header -->
-    <app-index-header (toggleNavStateEvent)="changeSidebarCollapseState()" [userImg]="userImg" [userName]="userName"></app-index-header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <app-index-sidebar [curId]="curRouteId" [navList]="navData"></app-index-sidebar>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 884px;">
-      <section class="content-header">
-        <h1>
-          {{pageTitle}}
-        </h1>
-        <ol class="breadcrumb">
+<div class="full-screen" [class.sidebar-mini]="sidebarCollapse">
+  <header class="main-header">
+    <a (click)="sidebarCollapse=!sidebarCollapse">
+      <i class="fa fa-navicon"></i>
+    </a>
+  </header>
+  <div class="main-sidebar">
+    <app-index-sidebar [navList]="navData"></app-index-sidebar>
+  </div>
+  <div class="main-content-wrapper">
+    <div class="container-fluid">
+      <section class="page-header">
+        <ol class="breadcrumb pull-right" style="background: none">
           <li><a><i class="fa fa-dashboard"></i> 首页</a></li>
           <li class="active">
             <a>
@@ -18,21 +18,16 @@
             </a>
           </li>
         </ol>
+        <h3>
+          {{pageTitle}}
+        </h3>
       </section>
       <section class="content">
         <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
       </section>
     </div>
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <app-index-footer>
-      <ng-container name="copyright">
-        <strong>Copyright © 2016 <a href="#">Company</a>.</strong>All rights reserved.
-      </ng-container>
-      <ng-container name="custom">
-        定制化内容
-      </ng-container>
-    </app-index-footer>
   </div>
-  <!-- ./wrapper -->
+  <div class="main-footer">
+    footer
+  </div>
 </div>
