@@ -90,7 +90,28 @@ const navData:SidebarNav[]=[
         id:2
       }
     ]
-  }
+  },
+  {
+    name:'面板',
+    icon:'fa  fa-heartbeat',
+    id:3,
+    children:[
+
+      {
+        path: 'panelTab',
+        name:'PanelTab 选项卡面板',
+        icon:'fa fa-calendar-o',
+        id:33
+      },
+      {
+        path: 'panel',
+        name:'Panel 面板',
+        icon:'fa fa-calendar-o',
+        id:32
+      }
+    ]
+  },
+  {id:12,icon:'glyphicon glyphicon-music',name:'test',path:'test'}
 ];
 @Injectable()
 export class NavService{

@@ -56,6 +56,18 @@ const routes: Routes = [
         path:'modals',
         loadChildren:'app/index/index-modals/index-modals.module#IndexModalsModule'
       },
+      {
+        path:'panel',
+        loadChildren:'app/index/index-panel/index-panel.module#IndexPanelModule'
+      },
+      {
+        path:'panelTab',
+        loadChildren:'app/index/index-panel-tab/index-panel-tab.module#IndexPanelTabModule'
+      },
+      {
+        path:'test',
+        loadChildren:'app/index/index-test/index-test.module#IndexTestModule'
+      },
       {path:'',redirectTo:'general',pathMatch:'full'}
     ]
   }

@@ -1,0 +1,20 @@
+<div class="panel panel-{{theme}}" *ngIf="show">
+  <div class="panel-heading">
+    <ng-container *ngIf="header">{{header}}</ng-container>
+    <ng-content select="[name='header']"></ng-content>
+    <div class="pull-right">
+      <a (click)="minus()" *ngIf="showToolMinus">
+        <i class="fa fa-plus" [class.fa-minus]="state=='active'"></i>
+      </a>
+      <a (click)="close()" *ngIf="showToolClose">
+        <i class="fa fa-close"></i>
+      </a>
+    </div>
+  </div>
+  <div  [@fade]="state" style="overflow: hidden">
+    <div class="panel-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+</div>

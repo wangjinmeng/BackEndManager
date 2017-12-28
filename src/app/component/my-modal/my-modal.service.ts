@@ -43,6 +43,7 @@ export class MyModalService {
     return ref;
   }
   showDom(ref:TemplateRef<any>){
+    console.log(ref)
     let modalRef= this.modalService.show(ref);
     return modalRef;
   }
